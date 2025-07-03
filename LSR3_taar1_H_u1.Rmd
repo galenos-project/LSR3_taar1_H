@@ -1869,7 +1869,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_serious`,
 
 ```
 
-**Figure 49** Forest plot for serious adverse events for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the studies for this outcome is presented. Studies with no estimable effect size had 0 events in both arms. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
+**Figure 53** Forest plot for serious adverse events for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the studies for this outcome is presented. Studies with no estimable effect size had 0 events in both arms. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
@@ -1891,7 +1891,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_serious`,
 
 ```
 
-**Figure 50** Forest plot for serious adverse events for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 54** Forest plot for serious adverse events for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -1962,7 +1962,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_adverse_event`,
 
 ```
 
-**Figure 51** Forest plot for any adverse event for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
+**Figure 55** Forest plot for any adverse event for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
@@ -1983,7 +1983,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_adverse_event`,
 
 ```
 
-**Figure 52** Forest plot for any adverse event for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 56** Forest plot for any adverse event for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2008,7 +2008,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_anticholinergic_symptom`,
 
 ```
 
-**Figure 53** Forest plot for anticholinergic side effects (e.g., dry mouth in this study) for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 57** Forest plot for anticholinergic side effects (e.g., dry mouth in this study) for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
@@ -2031,7 +2031,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_anticholinergic_symptom`,
 
 ```
 
-**Figure 54** Forest plot for anticholinergic side effects (e.g., constipation reported) for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 58** Forest plot for anticholinergic side effects (e.g., constipation reported) for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 No usable data available from RCT.
 
@@ -2070,7 +2070,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_dizziness`,
 
 ```
 
-**Figure 55** Forest plot for dizziness for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the studies for this outcome is presented. Studies with no estimable effect size had 0 events in both arms. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
+**Figure 59** Forest plot for dizziness for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the studies for this outcome is presented. Studies with no estimable effect size had 0 events in both arms. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
@@ -2102,7 +2102,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_nausea_vomitting`,
 
 ```
 
-**Figure 56** Forest plot for nausea or vomitting for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks.It should be noted that the studies [@RN115] and @milanovic2024 examined ulotaront that is also a partial agonsit of 5-HT1A causing potentially gastrointestinal side-effects. In comparison, ralmitaront is not a partial agonist of the 5-HT1A receptor. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
+**Figure 60** Forest plot for nausea or vomitting for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks.It should be noted that the studies [@RN115] and @milanovic2024 examined ulotaront that is also a partial agonist of 5-HT1A causing potentially gastrointestinal side-effects. In comparison, ralmitaront is not a partial agonist of the 5-HT1A receptor. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
@@ -2122,7 +2122,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_nausea_vomitting`,
                  label.left = "TAAR1 better", label.right="Antipsychotic better")
 ```
 
-**Figure 57** Forest plot for nausea or vomitting for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). It should be noted that the study [@RN113] examined ralmitaront, which compared to ulotaront is not a partial agonist of the 5-HT1A receptor that can be associated with gastrointestinal side effects. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 61** Forest plot for nausea or vomitting for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). It should be noted that the study [@RN113] examined ralmitaront, which compared to ulotaront is not a partial agonist of the 5-HT1A receptor that can be associated with gastrointestinal side effects. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2179,7 +2179,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_weight_increased`,
                  label.left = "TAAR1 better", label.right="Antipsychotic better")
 ```
 
-**Figure 58** Forest plot for weight increase for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 62** Forest plot for weight increase for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2198,7 +2198,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_weight_increased`,
                  label.left = "TAAR1 better", label.right="Antipsychotic better")
 ```
 
-**Figure 59** Forest plot for weight increase for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 63** Forest plot for weight increase for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 ### 6.2.21 Weight in kg
 
@@ -2305,7 +2305,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_anxiety`,
 
 ```
 
-**Figure 61** Forest plot for anxiety as adverse event for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 66** Forest plot for anxiety as adverse event for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
@@ -2326,7 +2326,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_anxiety`,
 
 ```
 
-**Figure 62** Forest plot for anxiety as adverse event for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 67** Forest plot for anxiety as adverse event for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2347,7 +2347,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_anxiety`,
 
 ```
 
-**Figure 63** Forest plot for anxiety as adverse event for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 68** Forest plot for anxiety as adverse event for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 ### 6.2.28 Agitation
 
@@ -2374,7 +2374,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_agitation`,
 
 ```
 
-**Figure 64** Forest plot for agitation for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 69** Forest plot for agitation for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2399,7 +2399,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_headache`,
 
 ```
 
-**Figure 65** Forest plot for headache as adverse event for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 70** Forest plot for headache as adverse event for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
@@ -2419,7 +2419,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_headache`,
 
 ```
 
-**Figure 66** Forest plot for headache for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 71** Forest plot for headache for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2444,7 +2444,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_sedation`,
                  label.left = "TAAR1 better", label.right="Antipsychotic better")
 ```
 
-**Figure 67** Forest plot for sedation for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
+**Figure 72** Forest plot for sedation for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
@@ -2466,7 +2466,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_sedation`,
                  label.left = "TAAR1 better", label.right="Antipsychotic better")
 ```
 
-**Figure 68** Forest plot for sedation for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 73** Forest plot for sedation for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 ### 6.2.31 Insomnia
 
@@ -2491,7 +2491,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_insomnia`,
                  label.left = "TAAR1 better", label.right="Antipsychotic better")
 ```
 
-**Figure 69** Forest plot for insomnia for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 74** Forest plot for insomnia for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2510,7 +2510,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_insomnia`,
                  label.left = "TAAR1 better", label.right="Antipsychotic better")
 ```
 
-**Figure 70** Forest plot for insomnia for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+**Figure 75** Forest plot for insomnia for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 ### 6.2.32 Summary outcome plots
 
@@ -2554,7 +2554,7 @@ ggplot(data=efficacy_primary_2,
 
 ```
 
-**Figure 71** Summary plot for efficacy outcomes at 4 weeks for the comparison of TAAR1 agonists versus antipscyhotcs in patients with an acute episode of schizophrenia. There were only data for the timepoint of 3-13 weeks. There were only data for ralmitaront as TAAR1 agonist and risperidone as control group. SMD\>0 correspond to more symptom improvement by TAAR1 agonists compared to antipsychotic. SMD: Standardized mean difference, 95%CI: 95% confidence interval. N=number of studies, n=number of participants.
+**Figure 76** Summary plot for efficacy outcomes at 4 weeks for the comparison of TAAR1 agonists versus antipscyhotcs in patients with an acute episode of schizophrenia. There were only data for the timepoint of 3-13 weeks. There were only data for ralmitaront as TAAR1 agonist and risperidone as control group. SMD\>0 correspond to more symptom improvement by TAAR1 agonists compared to antipsychotic. SMD: Standardized mean difference, 95%CI: 95% confidence interval. N=number of studies, n=number of participants.
 
 It should be noted that there were also data for relapse that are not displayed in this figure (see instead 2.6.9).
 
@@ -2608,7 +2608,7 @@ ggplot(data=safety_primary_plot_2,
 
 ```
 
-**Figure 72** Summary forest plot for dropouts and side-effects for the comparison of TAAR1 agonists compared to antipsychotics and for the three timepoints with usable data. There were data for single doses of ulotaront versus amisulpride in healthy volunteers at 1 day, single dose of ulotaront versus previous antipsychotic in adults with schizophrenia and concurrent metabolic syndrome at 1 day, ralmitaront versus risperidone in acute schizophrenia or schizoaffective disorder at 4 weeks, ulotaront versus quetiapine in clinically stable adults with schizophrenia at 52 weeks. The size of the points is proportional to the number of participants. OR\>1 corresponds to more events with TAAR1 agonists compared to antipsychotics. OR: Odds ratio, 95%CI: 95% confidence interval. N=number of studies, n=number of participants.
+**Figure 77** Summary forest plot for dropouts and side-effects for the comparison of TAAR1 agonists compared to antipsychotics and for the three timepoints with usable data. There were data for single doses of ulotaront versus amisulpride in healthy volunteers at 1 day, single dose of ulotaront versus previous antipsychotic in adults with schizophrenia and concurrent metabolic syndrome at 1 day, ralmitaront versus risperidone in acute schizophrenia or schizoaffective disorder at 4 weeks, ulotaront versus quetiapine in clinically stable adults with schizophrenia at 52 weeks. The size of the points is proportional to the number of participants. OR\>1 corresponds to more events with TAAR1 agonists compared to antipsychotics. OR: Odds ratio, 95%CI: 95% confidence interval. N=number of studies, n=number of participants.
 
 ## 6.3 *TAAR1 agonist vs placebo (adjunctive to antipsychotic treatment)*
 
@@ -2635,7 +2635,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_overall`,
                  label.left = "Placebo (add-on) better", label.right="TAAR1 (add-on) better")
 ```
 
-**Figure 73** Forest plot for overall symptoms (primary outcome, measured with PANSS total) for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
+**Figure 78** Forest plot for overall symptoms (primary outcome, measured with PANSS total) for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2664,7 +2664,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_positive`,
                  label.left = "Placebo (add-on) better", label.right="TAAR1 (add-on) better")
 ```
 
-**Figure 74** Forest plot for positive symptoms (measured with PANSS postivie Marder factor) for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
+**Figure 79** Forest plot for positive symptoms (measured with PANSS postivie Marder factor) for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2693,7 +2693,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_negative`,
                  label.left = "Placebo (add-on) better", label.right="TAAR1 (add-on) better")
 ```
 
-**Figure 75** Forest plot for positive symptoms (measured with BNSS) for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
+**Figure 80** Forest plot for positive symptoms (measured with BNSS) for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2778,7 +2778,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_response`,
 
 ```
 
-**Figure 76** Forest plot for response (imputed; \>50% symptom reduction in PANSS total from baseline) for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 81** Forest plot for response (imputed; \>50% symptom reduction in PANSS total from baseline) for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2821,7 +2821,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_dropout_any`,
 
 ```
 
-**Figure 77** Forest plot for dropouts due to any reason for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 82** Forest plot for dropouts due to any reason for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2849,7 +2849,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_dropout_ae`,
                  label.left = "TAAR1 (add-on) better", label.right="Placebo (add-on) better")
 ```
 
-**Figure 78** Forest plot for dropouts due to adverse event for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 83** Forest plot for dropouts due to adverse event for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2878,7 +2878,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_serious`,
 
 ```
 
-**Figure 79** Forest plot for serious adverse events for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals
+**Figure 84** Forest plot for serious adverse events for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2905,7 +2905,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_death`,
                  label.left = "TAAR1 (add-on) better", label.right="Placebo (add-on) better")
 ```
 
-**Figure 80** Forest plot for death for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 85** Forest plot for death for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2933,7 +2933,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_adverse_event`,
 
 ```
 
-**Figure 81** Forest plot for any adverse event for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 86** Forest plot for any adverse event for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -2961,7 +2961,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_anticholinergic_symptom`,
 
 ```
 
-**Figure 82** Forest plot for anticholinergic side-effects (i.e., constipation in this study) for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks. The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 87** Forest plot for anticholinergic side-effects (i.e., constipation in this study) for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks. The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -3003,7 +3003,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_dizziness`,
 
 ```
 
-**Figure 83** Forest plot for dizziness for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 88** Forest plot for dizziness for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -3032,7 +3032,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_nausea_vomitting`,
 
 ```
 
-**Figure 84** Forest plot for nausea or vomiting for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 89** Forest plot for nausea or vomiting for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -3202,7 +3202,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_headache`,
 
 ```
 
-**Figure 85** Forest plot for headache for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 90** Forest plot for headache for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -3233,7 +3233,7 @@ forest(`meta_comp_taar1_vs_placebo_addon_3-13 weeks_sedation`,
 
 ```
 
-**Figure 86** Forest plot for sedation for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 91** Forest plot for sedation for the comparison of adjunctive TAAR1 agonist vs. placebo to antipsychotic treatment at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -3295,7 +3295,7 @@ ggplot(data=efficacy_primary3,
 
 ```
 
-**Figure 87** Summary plot for efficacy outcomes at 12 weeks for the comparison of adjunctive TAAR1 agonists vs. placebo to antipsychotic treatment in adults with schizophrenia and negative symptoms. There were only available data for the timepoint of 3-13 weeks. The size of the points are proportional to the number of participants used in the analysis. SMD\>0 correspond to more symptom improvement by TAAR1 agonists compared to placebo. SMD: Standardized mean difference, 95%CI: 95% confidence interval. N=number of studies, n=number of participants.
+**Figure 92** Summary plot for efficacy outcomes at 12 weeks for the comparison of adjunctive TAAR1 agonists vs. placebo to antipsychotic treatment in adults with schizophrenia and negative symptoms. There were only available data for the timepoint of 3-13 weeks. The size of the points are proportional to the number of participants used in the analysis. SMD\>0 correspond to more symptom improvement by TAAR1 agonists compared to placebo. SMD: Standardized mean difference, 95%CI: 95% confidence interval. N=number of studies, n=number of participants.
 
 It should be noted that there were also data for relapse that are not displayed in this figure (see instead 2.7.9).
 
@@ -3352,7 +3352,7 @@ ggplot(data=safety_primary_plot3,
 
 ```
 
-**Figure 88** Summary forest plot for dropouts and side-effects for the comparison of adjunctive TAAR1 agonists vs. placebo to antipsychtoic treatment and for the timepoint of 3-13 weeks. There were available data from a single study including adults with schizophrenia and negative symptoms. The size is proportional to the number of participants in the analysis. OR\>1 corresponds to more events with TAAR1 agonists compared to placebo. OR: Odds ratio, 95%CI: 95% confidence intervals. N=number of studies, n=number of participants.
+**Figure 93** Summary forest plot for dropouts and side-effects for the comparison of adjunctive TAAR1 agonists vs. placebo to antipsychtoic treatment and for the timepoint of 3-13 weeks. There were available data from a single study including adults with schizophrenia and negative symptoms. The size is proportional to the number of participants in the analysis. OR\>1 corresponds to more events with TAAR1 agonists compared to placebo. OR: Odds ratio, 95%CI: 95% confidence intervals. N=number of studies, n=number of participants.
 
 # 7. Mechanistic insights into the effects of TAAR1 agonism for psychosis
 
@@ -3431,7 +3431,7 @@ forest(meta_comp_drug,
                  label.left = "Placebo better", label.right="TAAR1 better")
 ```
 
-**Figure 89** Forest plot presenting the effects of ulotaront and ralmitaront compared to placebo on overall symptoms in acute schizophrenia (measured with PANSS total) at 4-6 weeks separately. SMD: Standardized mean difference, 95%CI: 95% confidence intervals, SD: standard deviation.
+**Figure 94** Forest plot presenting the effects of ulotaront and ralmitaront compared to placebo on overall symptoms in acute schizophrenia (measured with PANSS total) at 4-6 weeks separately. SMD: Standardized mean difference, 95%CI: 95% confidence intervals, SD: standard deviation.
 
 ## 8.4 Dose-effect relationships
 
@@ -3455,7 +3455,7 @@ ggplot(data=data_doses[data_doses$population=="acute",], aes(x=dose,
   theme_bw()
 ```
 
-**Figure 90** Effect sizes for each dose level of ulotaront and ralmitaront compared to placebo in improving overall symptoms of acute schizophrenia at 4-6 weeks are presented separately. The findings of each study are presented separately, and the effect sizes were corrected for using the same control condition in each study. It should be noted that @RN110 was a two-arm flexible-dosing study, and its effect size is placed in the middle of the range of the administered dose (50mg/d to 75mg/d). SMD: Standardized mean difference, 95%CI: 95% confidence intervals.
+**Figure 95** Effect sizes for each dose level of ulotaront and ralmitaront compared to placebo in improving overall symptoms of acute schizophrenia at 4-6 weeks are presented separately. The findings of each study are presented separately, and the effect sizes were corrected for using the same control condition in each study. It should be noted that @RN110 was a two-arm flexible-dosing study, and its effect size is placed in the middle of the range of the administered dose (50mg/d to 75mg/d). SMD: Standardized mean difference, 95%CI: 95% confidence intervals.
 
 In the fixed-dosing studies [@RN111; @RN112; @RN113], higher doses (i.e., ulotaront 100mg/d and ralmitaront 150mg/d) may be associated with more improvement compared to smaller doses. However, the effect sizes at these high doses still appear to be small, with a standardized mean difference (SMD) of approximately 0.2. In the flexible dosing study by @RN110 , which utilized doses of ulotaront up to 75mg/d, small-to-medium effect sizes were observed. Importantly, the available data are limited. Moreover, another study [@sumitomo2024] examined two fixed-doses of ulotaront (50 mg/d and 75 mg/d) compared to placebo, but it is still unpublished with no data available, and it was terminated earlier due to company business strategy. Therefore, dose-effect findings are inconclusive.
 
@@ -3478,7 +3478,7 @@ ggplot(data=data_doses[data_doses$population=="negative",], aes(x=dose,
   theme_bw()
 ```
 
-**Figure 91** Effect sizes for each dose level of ralmitaront compared to placebo (monotherapy or add-on to antipsychotic treamtnet) in improving overall symptoms (measured with PANSS total; primary outcome) and negative symptoms (measured with BNSS) in people with schizophrenia or schizoaffective disorder and predominant negative symptoms in at 12 weeks. The findings of each part of the single available study of @hoffmann-laroche2024 (part A for monotherapy and part B for add-on treatment) are presented separately, and the effect sizes were corrected for using the same control condition in each study. In this exploratory analysis, we focused on negative symptom scores rather than overall symptoms (primary outcome of the review).
+**Figure 96** Effect sizes for each dose level of ralmitaront compared to placebo (monotherapy or add-on to antipsychotic treamtnet) in improving overall symptoms (measured with PANSS total; primary outcome) and negative symptoms (measured with BNSS) in people with schizophrenia or schizoaffective disorder and predominant negative symptoms in at 12 weeks. The findings of each part of the single available study of @hoffmann-laroche2024 (part A for monotherapy and part B for add-on treatment) are presented separately, and the effect sizes were corrected for using the same control condition in each study. In this exploratory analysis, we focused on negative symptom scores rather than overall symptoms (primary outcome of the review).
 
 It appeared that ralmitaront 45 mg/d, which was examined as an add-on treatment, resulted potentially in a worsening of overall symptoms and smaller reduction in negative symptoms compared to the higher doses of 150 mg/d and 300 mg/d; this study arm included 5 participants and it was discontinued. The available data were limited, and the findings remained inconclusive.
 
@@ -3562,7 +3562,7 @@ ggplot(data = data_sens_missing, aes(x = es_missing)) +
 
 ```
 
-**Figure 92** Exploration of the potential impact of the omitted data from one study with unavailable results on the summary effect of the comparison of TAAR1 agonists vs. placebo on overall symptoms in acute schizophrenia at 3–13 weeks. The x-axis represents the point estimate of the SMD of the omitted results from [@sumitomo2024]. The y-axis represents the summary effects of a meta-analysis including the omitted results across the potential range of assumed effect sizes (from –0.5 to 0.75). The findings from the original meta-analysis without including the omitted results are also presented for comparison. The results from both the random- and fixed-effects models are shown.
+**Figure 97** Exploration of the potential impact of the omitted data from one study with unavailable results on the summary effect of the comparison of TAAR1 agonists vs. placebo on overall symptoms in acute schizophrenia at 3–13 weeks. The x-axis represents the point estimate of the SMD of the omitted results from [@sumitomo2024]. The y-axis represents the summary effects of a meta-analysis including the omitted results across the potential range of assumed effect sizes (from –0.5 to 0.75). The findings from the original meta-analysis without including the omitted results are also presented for comparison. The results from both the random- and fixed-effects models are shown.
 
 It appears that the inclusion of the omitted results from [@sumitomo2024] would not have materially changed the summary effects in either the random- or fixed-effects meta-analysis. The findings were especially robust within the range of the most plausible effect sizes (e.g., between –0.2 and 0.4), with the point estimates of the meta-analysis falling within the range of trivial to small effects (e.g., between 0.10 and 0.17). Thus, it can be concluded that the omission of the results from [@sumitomo2024] would not have had a substantial impact on the summary effects of the meta-analysis for this comparison (see 10.4.1).
 
@@ -3584,7 +3584,7 @@ Specifically, the ROB-ME framework involves four steps in the assessment of repo
 knitr::include_graphics("data_u1/rob_me_step4.png")
 ```
 
-**Figure 93** Algorithm and signalling questions of the fourth step of the ROB-ME framework. This figure was reproduced from the respective cribsheet of ROB-ME, specifically figure 2 available at the link: <https://drive.google.com/file/d/1jceuWTo3nbrOrJcGxiXW6naLc32tDsfU/view>. No changes were made. The cribsheet and ROB-ME are licensed under [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.](https://creativecommons.org/licenses/by-nc-nd/4.0/) 
+**Figure 98** Algorithm and signalling questions of the fourth step of the ROB-ME framework. This figure was reproduced from the respective cribsheet of ROB-ME, specifically figure 2 available at the link: <https://drive.google.com/file/d/1jceuWTo3nbrOrJcGxiXW6naLc32tDsfU/view>. No changes were made. The cribsheet and ROB-ME are licensed under [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.](https://creativecommons.org/licenses/by-nc-nd/4.0/) 
 
 ## 10.1 Results matrix
 
@@ -3736,7 +3736,9 @@ Thus, for within-study biases, we assigned:
 
 -   "Moderate risk" when the included studies had a low risk or at most some concerns, mainly in the domain of missing outcome data, but more than 50% of the studies were assigned an overall judgement of some concerns.
 
-The justification was that, in most cases, some concerns were raised due to missing outcome data. A recent meta-epidemiological study suggested that biases due to missing outcome data might underestimate the effects [@wang2024]. In schizophrenia trials, there is evidence that participants who dropped out may have a worse prognosis compared to those who stayed in the trial [@rabinowitz2008]. However, there were generally no clear differences in dropouts between TAAR1 agonists and control conditions, although TAAR1 may be associated with higher dropout rates compared to placebo (**Figure 11**). Therefore, we judged that a high risk of bias due to missing outcome data in efficacy outcomes in @RN13, could have possibly overestimated the effects of TAAR1 agonists compared to placebo in favor of the former. However, in other cases, when there were some concerns for safety, it is unclear whether missing outcome data could have led to biased findings. Other domains of bias, such as bias due to randomization in a crossover trial [@RN124], potential biases due to period and carry-over effects in two studies [@RN124; @milanovic2024] , and due to deviations from intended intervention and outcome measurement in one open trial [@milanovic2024], were also considered, mainly within the overall judgment of potential risk of bias, and potentially in favor of the experimental intervention of TAAR1 agonists.
+The justification was that, in most cases, some concerns were raised due to missing outcome data. A recent meta-epidemiological study suggested that biases due to missing outcome data might underestimate the effects [@wang2024]. In schizophrenia trials, there is evidence that participants who dropped out may have a worse prognosis compared to those who stayed in the trial [@rabinowitz2008]. However, there were generally no clear differences in dropouts between TAAR1 agonists and control conditions, although TAAR1 may be associated with higher dropout rates compared to placebo (**Figure 11**). Therefore, we judged that a high risk of bias due to missing outcome data in efficacy outcomes in @RN13 and @hoffmann-laroche2024 could have possibly overestimated the effects of TAAR1 agonists compared to placebo in favor of the former. However, in other cases, when there were some concerns for safety, it is unclear whether missing outcome data could have led to biased findings. The same rationale was applied to the outcome of relapse, as it was often either a reason for dropout or defined as an adverse event.
+
+Other domains of bias, such as bias due to randomization in a crossover trial [@RN124], potential biases due to period and carry-over effects in two studies [@RN124; @milanovic2024] , and due to deviations from intended intervention and outcome measurement in one open trial [@milanovic2024], were also considered, mainly within the overall judgment of potential risk of bias, and potentially in favor of the experimental intervention of TAAR1 agonists.
 
 ### 11.1.3 Across-study bias
 
@@ -3746,7 +3748,7 @@ This is referring to risk of bias due to missing evidence, and we used the appro
 
 We assessed the potential indirectness of the findings by taking into consideration the characteristics of the population, intervention, control conditions, outcomes, and settings of the clinical trials. It should be noted that our focus was primarily on clinical trial settings, rather than on the generalizability of the findings to real-world populations. The main population to which the findings will be applied is people with schizophrenia and other schizophrenia-like conditions, unless a specific analysis was conducted for a different subgroup (e.g., as for efficacy outcomes).
 
-For efficacy outcomes, we assigned a "low risk" of indirectness, as we conducted separate analyses for the different subpopulations and found no concerns regarding population, interventions, control conditions, outcomes, or settings in the eligible trials.
+For efficacy outcomes, we assigned a "low risk" of indirectness, as we conducted separate analyses for the different subpopulations and found no concerns regarding population, interventions, control conditions, outcomes, or settings in the eligible trials. For relapse, we assigned a "moderate risk" of indirectness when the outcome was defined as a "schizophrenia" adverse event in one study [@otsukapharmaceuticaldevelopmentcommercializationinc2024] rather than dropouts due to relapse or using other operationalized definitions of relapse.
 
 For safety and acceptability outcomes, potential indirectness in terms of population characteristics may exist in the analysis of the acceptability and tolerability outcomes. This is because we pooled data from diverse populations, including those with schizophrenia spectrum disorders, Parkinson's disease psychosis, narcolepsy-cataplexy, and healthy volunteers. Thus, we assigned:
 
@@ -3868,7 +3870,7 @@ knitr::kable(soe_sch_neg_ta1_pl_addon_eff)
 
 ### 11.2.4 Mechanistic insights of TAAR1 agonism for psychosis
 
-Evidence from two neuroimaging studies [@RN115; @RN132] generally supports the notion that TAAR1 agonists can ameliorate the elevated striatal dopamine synthesis and release capacity that is considered central in the development of symptoms of psychosis [@howes2022]. The summary of the evidence of these studies is presented below.
+Evidence from two neuroimaging studies [@RN115; @RN132] generally supports the notion that TAAR1 agonists can ameliorate the elevated striatal dopamine synthesis and release capacity that is considered central in the development of symptoms of psychosis [@howes2022]. The summary of the evidence of these studies is presented below. It should be noted that another study [@pet_ralmitaront], identified in the updated searches, remains unpublished and was retrospectively registered on ClinicalTrials.gov.
 
 ```{r echo=FALSE, fig.width=12, fig.height=8}
 knitr::kable(soe_mechanistic)
