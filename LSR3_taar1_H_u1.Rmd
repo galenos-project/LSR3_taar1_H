@@ -148,13 +148,13 @@ knitr::kable(studies_to_plot[, 1:14])
 
 # 4. Description of included studies
 
-There were 25 eligible studies, which characteristics can be found in **Table 1**, with 23 studies (2813 participants) being completed and 2 studies being still ongoing (according to the status reported in clinicaltrials.gov up to 01.04.2025).
+There were 27 eligible studies, which characteristics can be found in **Table 1**, with 25 studies (2826 participants) being completed and 3 studies being still ongoing (according to the status reported in clinicaltrials.gov up to 12.08.2025).
 
 The studies used to describe mechanistic insights are provided in the relevant section below. It should be noted that the findings from an additional single-arm molecular neuroimaging are described in this section [@RN132], which was uncontrolled and formally excluded from this iteration of the review. The characteristics of this study and its findings are described in the "mechanistic insights" section.
 
 ## 4.1 Completed studies with usable data
 
-There were usable data for this analysis from 12 studies (1683 participants) [@RN116; @RN13; @RN110; @RN111; @RN112; @RN113; @RN115; @RN123; @RN124; @milanovic2024; @nct04115319; @hoffmann-laroche2024], which enrolled adult populations across multiple countries and were funded by the industry manufacturing the TAAR1 agonists.
+There were usable data for this analysis from 12 studies (2175 participants) [@RN116; @RN13; @RN110; @RN111; @RN112; @RN113; @RN115; @RN123; @RN124; @milanovic2024; @nct04115319; @hoffmann-laroche2024], which enrolled adult populations across multiple countries and were funded by the industry manufacturing the TAAR1 agonists.
 
 ### 4.1.1 Studies examining multiple doses of TAAR1 agonists
 
@@ -3396,7 +3396,7 @@ Two studies were available:
 
     In conclusion, this study suggests that ulotaront may be able to reduce the dopamine synthesis capacity in clinically stable, but still symptomatic, people with schizophrenia, and the decrease in dopamine synthesis could be associated with the improvement of symptoms.
 
--   @pet_ralmitaront wwas a double-blind crossover RCT comparing ralmitaront 150 mg/day versus placebo, each administered for two weeks, in 35 individuals with clinically stable schizophrenia. The trial measured F-DOPA signal in the striatum, but it was retrospectively registered and no results were available.
+-   @pet_ralmitaront was a double-blind crossover RCT comparing ralmitaront 150 mg/day versus placebo, each administered for two weeks, in 35 individuals with clinically stable schizophrenia. The trial measured F-DOPA signal in the striatum, but it was retrospectively registered and no results were available.
 
 ## 7.3 Other data
 
