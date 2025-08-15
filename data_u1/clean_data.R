@@ -8,7 +8,7 @@ library(metafor)
 
 
 #Manually cleaned dataset from EPPI-reviewer (future iterations will allowed automated cleaning procedures)
-data<-read_xlsx("data_u1/LSR3_H_2025-01-16.xlsx")
+data<-read_xlsx("data_u1/LSR3_H_2025-08-15.xlsx")
 
 #Tsukada et al 2023: cleaning of the QTc continuous data reported for multiple assessments within a day and the AUC was calculated; then divided by 24 hours)
 data_cont<-read_xlsx("data_u1/LSR3_H_qtc_2023-11-24.xlsx") #Manually cleaned data from EPPI reviewer, only QTc continues data to be used here
@@ -50,7 +50,7 @@ data<-data %>% mutate(qtc_md_point=ifelse(study_name=="Tsukada (2023)", qtc_auc_
                                  ifelse(study_name=="Tsukada (2023)" | study_name=="Hopkins (2021)", 2, 1))) #Tsukada 3 arms but only 2 used here
 
 #save the dataset
-write_xlsx(data, "data_u1/data_2025-01-16_LSR3_H.xlsx")
+write_xlsx(data, "data_u1/data_2025-08-15_LSR3_H.xlsx")
 
 #data_unique_studies<-data %>% select(study_name, study_design, population, state, sample_n, age_mean) %>% unique() #only for descriptives
 
@@ -69,7 +69,7 @@ studies<-studies %>% mutate(rct=ifelse(grepl("RCT", Design), 1,0),
 
 studies<-studies[order(studies$Status, studies$Sponsor, studies$rct, studies$Population, studies$state),] #Ordering for a better presentation
 
-write_xlsx(studies, 'data_u1/studies_2025-01-16_LSR3_H.xlsx')
+write_xlsx(studies, 'data_u1/studies_2025-08-15_LSR3_H.xlsx')
 
 
 #Dataset with effect sizes for the different doses in order to plot them separately
@@ -130,4 +130,4 @@ master_sch_drug<-master_sch_drug %>% mutate(dose=ifelse(dose=="50-75", 62.5, as.
          schedule=ifelse(study_name=="Koblan (2020)", "flexible", "fixed"))
 
 
-write_xlsx(master_sch_drug, "data_u1/data_doses_2025-01-16_LSR3_H.xlsx")
+write_xlsx(master_sch_drug, "data_u1/data_doses_2025-08-15_LSR3_H.xlsx")

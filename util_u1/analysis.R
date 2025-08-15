@@ -8,7 +8,7 @@ library(robvis)
 
 rm(list=ls())
 
-master<-read_xlsx("data_u1/data_2025-01-16_LSR3_H.xlsx") #Main dataset
+master<-read_xlsx("data_u1/data_2025-08-15_LSR3_H.xlsx") #Main dataset
 
 rob<-read_xlsx("data_u1/rob_secondary_2025.01.16.xlsx") #RoB assessments for all outcomes
 
@@ -21,7 +21,7 @@ continuous_outcomes_md<-c("weight","prolactin") #qtc interval not used here as d
 dichotomous_outcomes_common<-c("dropout_any", 'dropout_ae', "adverse_event", "response", "relapse",
                                "anticholinergic_symptom", "anxiety","agitation", "headache", "hypotension", "dizziness",
                                "nausea_vomitting", "sedation", "hyperprolactinemia", "qtc_prolongation",
-                               "insomnia", "akathisia", "eps_symptoms", "weight_increased")
+                               "insomnia", "akathisia", "eps_symptoms", "weight_increased", "schizophrenia")
 dichotomous_outcomes_rare<-c("death", "serious")
 
 effic_outcomes<-c("overall", "positive", "negative", "functioning", "cognition", "depression", "response", "relapse")
@@ -232,7 +232,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
          if(length(unique(pairwise_i$crossover_periods))==1){
          meta_comp<-metabin(data=pairwise_i, 
                             event.e = event1_new, n.e=n1_new, event.c = event2_new, n.c=n2_new,
-                            sm=sm_used, random=random_true, fixed=fixed_true,  
+                            sm=sm_used, random=random_true, fixed=fixed_true,  MH.exact = ifelse(fixed_true==TRUE, TRUE, FALSE), #2025.08.15: Not applying continuity correcton
                             studlab = study_name_drug, prediction = prediction_true, subgroup=population)
          } else{
            meta_comp<-metagen(data=pairwise_i, #Present forest plots using crossover corrections
