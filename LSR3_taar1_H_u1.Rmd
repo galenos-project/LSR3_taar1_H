@@ -48,7 +48,7 @@ mainfont: Arialh
     source("util_u1/analysis.R")
 
     # Loading 
-    studies<-read_xlsx('data_u1/studies_2025-04-01_LSR3_H.xlsx', na = "NA") #Descriptive data set with included studies
+    studies<-read_xlsx('data_u1/studies_2025-08-15_LSR3_H.xlsx', na = "NA") #Descriptive data set with included studies
     data <- read_xlsx('data_u1/data_2025-08-15_LSR3_H.xlsx') #Clean data with the RCTs with available data
     data_doses<-read_xlsx("data_u1/data_doses_2025-08-15_LSR3_H.xlsx") #Effect sizes for the individual doses of TAAR1 (for a descriptive figure)
     ae_categories<-read_xlsx("data_u1/ae_categories.xlsx") #Supporting file with the names of adverse events for the summary plot for the side-effects
@@ -93,8 +93,8 @@ There were the following changes compared to the previous version of the review:
 
 1.  This document was restructured with clearer subcategories for the meta-analysis of the different comparisons and other sections to improve readability.
 2.  No changes in the methodology (e.g., eligibility criteria, search strategies, data synthesis approach). However, we preferred to use the total score of the Brief Negative Symptom Scale (BNSS) to measure negative symptoms, rather than the subscales or subscores of the PANSS, based on recent studies suggesting that the BNSS is more suitable than older scales [@weigel2023]. Accordingly, comparison 6.1.13 was updated, but the findings remained unchanged.
-3.  Data became available for three previously identified studies that had not been included in the analysis due to lack of data. These data were obtained from a full publication for [@milanovic2024], clinicaltrials.gov/EUCTR for [@hoffmann-laroche2024] [**To be filled**] or conference abstracts for ([@otsukapharmaceuticaldevelopmentcommercializationinc2024]; [@sirs2024])(<https://cnsscientificposters.ipostersessions.com/Default.aspx?s=30-4A-E4-FB-51-B0-CE-51-94-ED-E5-96-B7-42-A4-D0>). These provided data for new comparisons (i.e., adjunctive treatment to antipsychotics with TAAR1 agonists vs. placebo), additional outcomes (e.g., relapse), and longer-term timepoints. The respective analyses were updated accordingly. There were no new data for the primary outcome in adults with acute schizophrenia, but one additional study was terminated earlier [@sumitomo2024] but no data are available to be included in the analysis, thus, we assessed the potenital impact of the omission of this data in a sensitivty analysis (see 9.3). In addition, we examined post-hoc "schizophrenia"as an adverse event reported in clinical trials involving participants with schizophrenia.
-4.  Two additional studies were identified in the updated searches: i) @pet_ralmitaront, a two-period crossover randomized trial examining ralmitaront 150 mg/day versus placebo, each administered for two weeks, in patients with clinically stable schizophrenia, assessing neuroimaging measures and safety— no data were available, ii) @otsuka_new an ongoing phase III double-blind randomized trial comparing ulotaront 75 mg/day, 150 mg/day, and placebo in individuals with acute schizophrenia over six weeks.
+3.  Data became available for three previously identified studies that had not been included in the analysis due to lack of data. These data were obtained from a full publication for [@milanovic2024], clinicaltrials.gov/EUCTR for [@hoffmann-laroche2024] or conference abstracts for ([@otsukapharmaceuticaldevelopmentcommercializationinc2024]; [@sirs2024]). These provided data for new comparisons (i.e., adjunctive treatment to antipsychotics with TAAR1 agonists vs. placebo), additional outcomes (e.g., relapse), and longer-term timepoints. The respective analyses were updated accordingly. There were no new data for the primary outcome in adults with acute schizophrenia, but one additional study was terminated earlier [@sumitomo2024] but no data are available to be included in the analysis, thus, we assessed the potenital impact of the omission of this data in a sensitivty analysis (see 9.3). In addition, we examined post-hoc "psychosis" as an adverse event (e.g., worsening or exacerbation of the condition, or hallucinations), in addition to relapse (efficacy outcome in participants with clinically-stable condition).
+4.  Two additional studies were identified in the updated searches: i) @pet_ralmitaront, a two-period crossover randomized trial examining ralmitaront 150 mg/day versus placebo, each administered for two weeks, in patients with clinically stable schizophrenia, assessing neuroimaging measures and safety - no data were available, ii) @otsuka_new an ongoing phase III double-blind randomized trial comparing ulotaront 75 mg/day, 150 mg/day, and placebo in individuals with acute schizophrenia over six weeks.
 5.  Typos were corrected, and comparison 6.2.11 (dropouts due to adverse events) was revised, as dropouts due to any reason had been mistakenly reported instead of dropouts specifically due to adverse events.
 6.  We did not use continuity correction in fixed-effects models for dichotomous oucomes using the Mantel-Haenszel method.
 
@@ -112,7 +112,7 @@ There were the following changes compared to the previous version of the review:
 
 6.  The effect sizes were as follows: 1) standardized mean differences (SMD) for efficacy outcomes, given that various scales have been used in the literature to allow comparability of the findings with other studies of antipsychotic drugs; 2) mean differences (MD) for laboratory measures, i.e., weight (kg), QTc interval (msec), and prolactin levels (ng/ml); 3) odds ratios (OR) for dichotomous outcomes, which were also converted to absolute risks using a control event rate [@RN71]. 95% confidence intervals (95% CI) are presented, but 95% prediction intervals are not presented due to the small number of studies. Other effect sizes were not used in the first and second iteration of the review, e.g., those used in meta-analysis of variance due to the paucity of data.
 
-7.  Meta-analysis was conducted primarily using a random-effects model with inverse variance and REML estimator of tau-squared. Due to the small number of studies (\<5) in the majority of the analyses, we did not correct the confidence intervals using the Hartung-Knapp method [@RN82], and we also presented the findings from fixed-effects models using the Mantel-Haenszel method **(without continuity correction)** throughout. Meta-analysis of proportions was conducted to pool the control groups to estimate the control event rate using logit transformation of the proportions and inverse variance method [@schwarzer2019].
+7.  Meta-analysis was conducted primarily using a random-effects model with inverse variance and REML estimator of tau-squared. Due to the small number of studies (\<5) in the majority of the analyses, we did not correct the confidence intervals using the Hartung-Knapp method [@RN82], and we also presented the findings from fixed-effects models using the Mantel-Haenszel method throughout. Continuity corrections of 0.5 were applied in case of 0 events in one of the groups. Meta-analysis of proportions was conducted to pool the control groups to estimate the control event rate using logit transformation of the proportions and inverse variance method [@schwarzer2019].
 
 8.  Sensitivity analysis of the primary outcome included using fixed-effect methods (*post-hoc* due to the small number of studies), restricting the analysis to studies with an overall low risk of bias, and excluding studies with imputed values. A *post-hoc* sensitivity analysis was also conducted in this iteration to examine the potential impact of omitting the findings of a prematurely terminated study [@sumitomo2024] on the summary effects of the primary outcome.
 
@@ -151,6 +151,8 @@ knitr::kable(studies_to_plot[, 1:14])
 
 There were 27 eligible studies, which characteristics can be found in **Table 1**, with 25 studies (2826 participants) being completed and 3 studies being still ongoing (according to the status reported in clinicaltrials.gov up to 12.08.2025).
 
+Two studies had two-parts involving either adult and adolescent populations [@RN111], or examining monotherapy or add-on treatments [@hoffmann-laroche2024].
+
 The studies used to describe mechanistic insights are provided in the relevant section below. It should be noted that the findings from an additional single-arm molecular neuroimaging are described in this section [@RN132], which was uncontrolled and formally excluded from this iteration of the review. The characteristics of this study and its findings are described in the "mechanistic insights" section.
 
 ## 4.1 Completed studies with usable data
@@ -163,7 +165,7 @@ The usable studies compared single or multiple doses of two TAAR1 agonists (i.e.
 
 *Seven studies* used a parallel design to examine the efficacy and safety of multiple doses of TAAR1 agonists in psychosis within 3-13 weeks (six studies) and \>13 weeks (1 study):
 
--   *Four studies* examining daily doses of TAAR1 agonists in adults with an acute episode of schizophrenia spectrum conditions for 4-6 weeks, 3 examined ulotaront [@RN110; @RN111; @RN112] and 1 examined ralmitaront [@RN113]. These studies used placebo as a control group, and the 1 study on ralmitaront also used the antipsychotic risperidone as an active comparator. *One study* examined the efficacy and safety of ulotaront in comparison to placebo in adolescents with an acute episode schizophrenia (NCT04072354). This study had two parts with adults and adolescents. This study has been recently completed, and although some usable data in the adult population are available (see above), these are not available for the adolescents.
+-   *Four studies* examining daily doses of TAAR1 agonists in adults with an acute episode of schizophrenia spectrum conditions for 4-6 weeks, 3 examined ulotaront [@RN110; @RN111; @RN112] and 1 examined ralmitaront [@RN113]. These studies used placebo as a control group, and the 1 study on ralmitaront also used the antipsychotic risperidone as an active comparator. One of these studies [@RN111] included also a second part, involvingadolescents with an acute episode schizophrenia (data for efficacy were not available).
 
 -   *One study* compared ralmitaront as monotherapy or as an adjunct to antipsychotics in adults with schizophrenia spectrum conditions and negative symptoms for 12 weeks [@hoffmann-laroche2024].
 
@@ -210,7 +212,9 @@ rob_traffic_light(rob_all, tool="Generic")
 
 **Figure 2** Risk of bias of studies with usable data
 
-All the studies were double-blind randomized controlled studies, with a low risk of bias in most cases in their respective domains of biases due to randomization, deviations from intended interventions, and outcome measurement. An exception was one open-label crossover study examining a single dose of ulotaront versus previous antipsychotics [@milanovic2024]. There were also no indications of selectively reported results; thus, the studies had a low risk of bias in their respective domains. Most of the studies had missing outcome data, but there was no clear indication that the missingness depended on the true value of the effects for most of the outcomes. Therefore, there were some concerns, except for [@RN13; @hoffmann-laroche2024; @nct04115319] , which had a high risk of bias for efficacy outcomes but not for adverse events and other outcomes. Additionally, there were few differences in this domain across outcomes, such as a low risk for the outcome of dropouts. In terms of the four crossover studies, there was a low risk of bias in period and carry-over effects, except for some concerns in the three-period crossover study of @RN124 and the open-label crossover study of @milanovic2024. Few differences across outcomes can be found in the overall judgment of the risk of bias for each study per outcome in the respective forest plots below.
+All the studies were double-blind randomized controlled studies, with a low risk of bias in most cases in their respective domains of biases due to randomization, deviations from intended interventions, and outcome measurement. An exception was one open-label crossover study examining a single dose of ulotaront versus previous antipsychotics [@milanovic2024]. There were also no indications of selectively reported results; thus, the studies had a low risk of bias in their respective domains. Most of the studies had missing outcome data, but there was no clear indication that the missingness depended on the true value of the effects for most of the outcomes. **Therefore, there were some concerns, except for [@RN13; @hoffmann-laroche2024; @nct04115319] , which had a high risk of bias for efficacy outcomes but not for adverse events and other outcomes.** Additionally, there were few differences in this domain across outcomes, such as a low risk for the outcome of dropouts. In terms of the four crossover studies, there was a low risk of bias in period and carry-over effects, except for some concerns in the three-period crossover study of @RN124 and the open-label crossover study of @milanovic2024. Few differences across outcomes can be found in the overall judgment of the risk of bias for each study per outcome in the respective forest plots below.
+
+The assessments for the two two-part studies [@RN111; @hoffmann-laroche2024] are reported once, given that their individual assessments were the same.
 
 # 6. Results for the comparisons
 
@@ -243,7 +247,7 @@ forest(meta_comp_overall_sch,
                  label.left = "Placebo better", label.right="TAAR1 better")
 ```
 
-**Figure 3a** Forest plot for overall symptoms (primary outcome, measured with PANSS total) for the comparison of TAAR1 agonist vs. placebo in people with acute episode of schizophrenia at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
+**Figure 3a** Forest plot for overall symptoms (primary outcome, measured with PANSS total) for the comparison of TAAR1 agonist vs. placebo in people with acute episode of schizophrenia at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. There were no available data for the efficacy outcomes of the adolescent part of the @RN111. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
 
 ```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(meta_comp_overall_pdp, 
@@ -291,7 +295,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(meta_comp_positive_sch, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
@@ -305,9 +309,9 @@ forest(meta_comp_positive_sch,
                  label.left = "Placebo better", label.right="TAAR1 better")
 ```
 
-**Figure 4a** Forest plot for positive symptoms for the comparison of TAAR1 agonist vs. placebo in people with acute episode of schizophrenia (measured with PANSS positive) at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
+**Figure 4a** Forest plot for positive symptoms for the comparison of TAAR1 agonist vs. placebo in people with acute episode of schizophrenia (measured with PANSS positive) at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. There were no available data for the efficacy outcomes of the adolescent part of the @RN111. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(meta_comp_positive_pdp, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
@@ -323,7 +327,7 @@ forest(meta_comp_positive_pdp,
 
 **Figure 4b** Forest plot for positive symptoms for the comparison of TAAR1 agonist vs. placebo in people with Parkinson's disease psychosis (measured with SAPS-PD) at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(meta_comp_positive_neg, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
@@ -351,7 +355,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(meta_comp_negative_sch, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
@@ -366,9 +370,9 @@ forest(meta_comp_negative_sch,
 
 ```
 
-**Figure 5a** Forest plot for negative symptoms for the comparison of TAAR1 agonist vs. placebo (measured with BNSS or PANSS negative) in adutls with acute schizophrenia at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
+**Figure 5a** Forest plot for negative symptoms for the comparison of TAAR1 agonist vs. placebo (measured with BNSS or PANSS negative) in adutls with acute schizophrenia at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. There were no available data for the efficacy outcomes of the adolescent part of the @RN111. SMD:Standardized mean difference, 95%CI: 95% confidence intervals, SD: Standard deviation.
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(meta_comp_negative_neg, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
@@ -397,7 +401,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_depression`, 
        col.diamond = "royalblue4",
@@ -425,7 +429,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_cognition`, 
        col.diamond = "royalblue4",
@@ -481,7 +485,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(meta_comp_response_sch, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
@@ -498,7 +502,7 @@ forest(meta_comp_response_sch,
 
 **Figure 8a** Forest plot for response (\>50% or 20% symptom reduction in PANSS total from baseline) for the comparison of TAAR1 agonist vs. placebo in adults with acute episode of schizophrenia at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(meta_comp_response_pdp, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
@@ -515,7 +519,7 @@ forest(meta_comp_response_pdp,
 
 **Figure 8b** Forest plot for response (\>50% symptom reduction in SAPS-PD from baseline) for the comparison of TAAR1 agonist vs. placebo in people with Parkinson's disease psychosis at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(meta_comp_response_neg, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
@@ -544,7 +548,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_relapse`, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",   
@@ -569,7 +573,7 @@ No usable data available from RCT.
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_dropout_any`, 
        col.diamond = "green4",
        col.square =   "green3",
@@ -612,7 +616,7 @@ No usable data available from RCT.
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_dropout_ae`, 
        col.diamond = "green4",
        col.square =   "green3",     
@@ -656,7 +660,7 @@ No usable data available from RCT.
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_serious`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -720,7 +724,7 @@ There were available usable data from four studies (i.e., [@RN116; @RN115; @RN12
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=5}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=5}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_death`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -743,7 +747,7 @@ No usable data available from RCT.
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=5}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=5}
 forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_adverse_event`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -786,7 +790,7 @@ No usable data available from RCT.
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_anticholinergic_symptom`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -805,7 +809,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_anticholinergic_symptom`,
 
 #### Timepoint 2: *3 weeks - 13 week*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_anticholinergic_symptom`,
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -819,7 +823,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_anticholinergic_symptom`,
 
 ```
 
-**Figure 20** Forest plot for anticholinergic side-effects (i.e., constipation in this study) for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks. The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 20** Forest plot for anticholinergic side-effects (e.g., constipation, dry mouth, dry eye) for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks. The overall risk of bias of the studies for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 No usable data available from RCT.
 
@@ -835,7 +839,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_hypotension`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -859,7 +863,7 @@ No usable data available from RCT.
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_dizziness`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -878,7 +882,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_dizziness`,
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_dizziness`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -992,7 +996,7 @@ No usable data available from RCT.
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -1024,7 +1028,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_weight_increased`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -1052,7 +1056,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_weight`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -1063,7 +1067,6 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_weight`,
                  overall = FALSE, prediction.subgroup = FALSE, prediction = FALSE,
                  subgroup = FALSE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
-
 
 
 ```
@@ -1110,7 +1113,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_prolactin`, 
        col.diamond = "firebrick4",
@@ -1141,7 +1144,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_akathisia`, 
        col.diamond = "firebrick4",
@@ -1171,7 +1174,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_eps_symptoms`,
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -1187,7 +1190,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_eps_symptoms`,
 
 ```
 
-**Figure 32** Forest plot for extrapyramidal side effects (use of antiparkinsonian medication as a proxy) for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. MD:Mean difference, SD: standard deviation, 95%CI: 95% confidence intervals. Furthermore, there were narrative descriptions from a conference abstract [@RN109] that ulotaront did not differ from placebo in extrapyramidal symptoms with low absolute frequencies in two unpublished phase III trials [@RN111; @RN112]. Moreover, ulotaront was reported not to deteriorate movement symptoms in participants with Parkinson's disease psychosis as measured with the Unified Parkinson Disease Rating Scale Part III [@RN13].
+**Figure 32** Forest plot for extrapyramidal side effects (use of antiparkinsonian medication as a proxy) for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. MD:Mean difference, SD: standard deviation, 95%CI: 95% confidence intervals. Moreover, ulotaront was reported not to deteriorate movement symptoms in participants with Parkinson's disease psychosis as measured with the Unified Parkinson Disease Rating Scale Part III [@RN13].
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -1217,7 +1220,7 @@ There were usable data for one study [@RN115], which reported 0 events in both g
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_anxiety`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -1245,7 +1248,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_agitation`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -1270,7 +1273,7 @@ No usable data available from RCT.
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_headache`, 
        col.diamond = "firebrick4",
@@ -1316,7 +1319,7 @@ Terms that were considered as reported in the trials: fatigue, sedation, somnole
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_sedation`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -1385,6 +1388,36 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_insomnia`,
 
 No usable data available from RCT.
 
+### 6.1.32 Psychosis
+
+Terms used were: schizophrenia as an adverse event (e.g., describing worsening or exacerbation of the condition) or hallucinations (in Parkinson's Disease Psychosis)
+
+#### Timepoint 1: *1 day - 2 weeks*
+
+No usable data available from RCT.
+
+#### Timepoint 2: *3 weeks - 13 weeks*
+
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=6}
+forest(`meta_comp_taar1_vs_placebo_3-13 weeks_psychosis`, 
+       col.diamond = "firebrick4",
+       col.square =   "firebrick3",     
+       label.c="placebo",      
+       rightcols = c("effect", "ci", "Overall"),rightlabs = c("OR", "95%-CI", "Risk of bias"),
+                 label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_insomnia`$data$treat1_new), 
+                 subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
+                 subgroup = TRUE, fixed=TRUE, random=TRUE,
+                 label.left = "TAAR1 better", label.right="Placebo better")
+
+```
+
+**Figure 39 (need to change)** Forest plot for psychosis as an adverse event for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence intervals.
+
+#### Timepoint 3: *\> 13 weeks*
+
+No usable data available from RCT.
+
 ### 6.1.32 Summary outcome plots
 
 #### Efficacy outcomes
@@ -1411,30 +1444,36 @@ level_population<-c("Schizophrenia spectrum (acute episode)","Schizophrenia spec
 
 ggplot(data=efficacy_primary, 
        aes(y=factor(event_text, level=rev(level_outcomes)), x=point))+
-  geom_text(aes(x=0.65, label=n_text), colour="black" , position=position_dodge(width = 0.9))+
-  geom_point(aes(size=n), position=position_dodge(width = 0.5), colour="royalblue4")+ #Size proportional to the number of participants
-  coord_cartesian(xlim=c(-0.8,0.8))+
-  geom_errorbar(aes(x=point, xmin=lb, 
-                    xmax=ub),
+  geom_text(aes(x=-0.9, label=n_text), colour="black" , position=position_dodge(width = 0.9))+
+  geom_point(size=4,#aes(size=n), 
+             position=position_dodge(width = 0.5), colour="royalblue4")+ #Size proportional to the number of participants
+  coord_cartesian(xlim=c(-1.2,1.2))+
+  geom_errorbarh(aes(x=point, xmin=lb, 
+                    xmax=ub), height=0.1,
                 width=0, position=position_dodge(width = 0.5), colour="royalblue4")+
   scale_size_continuous(guide=FALSE)+
   geom_vline(xintercept=0, linetype='dashed')+
   facet_grid(~factor(population, levels=level_population))+
   ylab("")+
   xlab("SMD 95%CI (SMD>0: TAAR1 agonist better)")+
-  theme_bw()
+  theme_bw()+
+  theme(
+    panel.grid.minor = element_blank(),
+    axis.ticks.y = element_blank(),
+    strip.background = element_blank(),
+    strip.text = element_text(face = "bold"))
 
 
 ```
 
 **Figure 40** Summary plot for efficacy outcomes at 4-6 weeks for the comparison of TAAR1 agonists vs. placebo in the three populations of patients with an acute episode of schizophrenia, schizophrenia and negative symptoms and Parkinson's disease psychosis. There were only available data for the timepoint of 3-13 weeks. The size of the points are proportional to the number of participants used in the analysis. SMD\>0 correspond to more symptom improvement by TAAR1 agonists compared to placebo. The findings of the random-effects model are presented. SMD: Standardized mean difference, 95%CI: 95% confidence interval. N=number of studies, n=number of participants.
 
-It should be noted that there were also data for relapse that are not displayed in this figure (see instead 2.5.9).
+It should be noted that there were also data for respone to treatment and relapse that are not displayed in this figure (see instead 2.5.9).
 
 #### Dropouts and side-effects
 
 ```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=12, warning=FALSE}
-safety_primary<-meta_outcome %>% left_join(ae_categories) %>%  #I need to change a bit 
+safety_primary<-meta_outcome %>% left_join(ae_categories) %>%  
   mutate(event_text=ifelse(outcome=="death", "Mortality", 
                            ifelse(outcome=="serious", "Serious event", 
                                   ifelse(outcome=="dropout_any", "Dropouts any reason",
@@ -1467,9 +1506,10 @@ safety_primary_plot<-safety_primary_plot %>% mutate(type_outcome=ifelse(outcome=
 ggplot(data=safety_primary_plot, 
        aes(y=factor(event_text, level=rev(level_order)), x=exp(point),colour=type_outcome, shape=timepoint))+
   geom_text(aes(x=0.03, label=n_text), colour="black" , position=position_dodge(width = 0.9))+
-  geom_point(aes(size=n), position=position_dodge(width = 0.5))+
-  geom_errorbar(aes(x=exp(point), xmin=exp(TE.random-1.96*seTE.random), 
-                    xmax=exp(TE.random+1.96*seTE.random), colour=type_outcome,shape=timepoint),
+  geom_point(size=4,#aes(size=n), 
+             position=position_dodge(width = 0.5))+
+  geom_errorbarh(aes(x=exp(point), xmin=exp(TE.random-1.96*seTE.random), 
+                    xmax=exp(TE.random+1.96*seTE.random), colour=type_outcome,shape=timepoint), height=0.2,
                 width=0, position=position_dodge(width = 0.5))+
   geom_vline(xintercept=1, linetype='dashed')+
   scale_size_continuous(guide=FALSE)+
@@ -1479,9 +1519,12 @@ ggplot(data=safety_primary_plot,
   scale_shape_manual(values=c(1, 19, 17))+
   scale_colour_manual(guide=FALSE, values=c("green4", "firebrick4"))+
   xlab("OR 95%CI (OR>1: TAAR1 agonists worse)")+
-  theme_bw()
-
-
+  theme_bw()+
+  theme(
+    panel.grid.minor = element_blank(),
+    axis.ticks.y = element_blank(),
+    strip.background = element_blank(),
+    strip.text = element_text(face = "bold"))
 ```
 
 **Figure 41** Summary forest plot for dropouts and side-effects for the comparison of TAAR1 agonists compared to placebo and for the two timepoints with usable data. It should be noted that different populations have been pooled in the analysis of dropouts and adverse events including schizophrenia (acute phase, negative symptoms), Parkinson's disease psychosis, narcolepsy-cateplexy and healthy volunteers. The size is proportional to the number of participants in the analysis. The findings of the random-effects model are presented. OR\>1 corresponds to more events with TAAR1 agonists compared to placebo. OR: Odds ratio, 95%CI: 95% confidence intervals. N=number of studies, n=number of participants.
@@ -1516,7 +1559,23 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_overall`,
 
 #### Timepoint 3: *\> 13 weeks*
 
-No usable data available from RCT.
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
+forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_overall`, 
+       col.diamond = "royalblue4",
+       col.square =   "royalblue1",
+                 rightcols = c("effect", "ci","Overall"), 
+                 rightlabs = c("SMD", "95%-CI", "Risk of bias"),  
+       xlim=c(-0.8,0.8),
+       label.c="quetiapine",
+                 label.e = unique(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_overall`$data$treat1_new), 
+                 subgroup.hetstat = TRUE, overall.hetstat =FALSE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
+                 overall = FALSE, prediction.subgroup = FALSE,
+                 subgroup = TRUE, fixed=TRUE,
+                 label.left = "Antipsychotic better", label.right="TAAR1 better")
+
+```
+
+**Figure 42** Forest plot for overall symptoms (primary outcome, measured with PANSS total) for the comparison of TAAR1 agonist vs. antipsychotics at 3-13 weeks (primary timepoint). The overall risk of bias of the studies for this outcome is presented. SMD: Standardized mean difference, SD: Standard deviation, 95%CI: 95% confidence interval..
 
 ### 6.2.2 Positive symptoms
 
@@ -1526,7 +1585,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_positive`, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
@@ -1555,7 +1614,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_negative`, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
@@ -1584,7 +1643,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_depression`, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
@@ -1656,7 +1715,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_response`, 
        col.diamond = "royalblue4",
@@ -1692,14 +1751,14 @@ No usable data available from RCT.
 
 #### Timepoint 3: *\> 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_relapse`, 
        col.diamond = "royalblue4",
        col.square =   "royalblue1",
                  rightcols = c("effect", "ci","Overall"), 
                  rightlabs = c("OR", "95%-CI", "Risk of bias"),  
-       xlim=c(0.2,5),
+       xlim=c(0.01,100),
        label.c="quetiapine",
                  label.e = unique(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_response`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =FALSE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
@@ -1710,17 +1769,13 @@ forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_relapse`,
 
 ```
 
-**Figure 47** Forest plot for relapse (defined as adverse event "schizophrenia") for the comparison of TAAR1 agonist vs. antipsychotics at more than 13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
-
-It should be noted that data from this trial were available only from a conference abstract [@sirs2024], which focused on reporting safety and tolerability and mentioned, without presenting quantitative data, that there were no differences between groups in the changes of PANSS total and subscale scores.
-
-No usable data available from RCT.
+**Figure 47** Forest plot for relapse (defined as schizophrenia as serious adverse event) for the comparison of TAAR1 agonist vs. antipsychotics at more than 13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
 ### 6.2.10 Dropouts due to any reason
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_dropout_any`, 
        col.diamond = "green4",
        col.square =   "green3",    
@@ -1741,7 +1796,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_dropout_any`,
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_dropout_any`, 
        col.diamond = "green4",
        col.square =   "green3",
@@ -1761,7 +1816,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_dropout_any`,
 
 #### Timepoint 3: *\> 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_dropout_any`, 
        col.diamond = "green4",
@@ -1804,7 +1859,7 @@ There were usable data in [@RN115], which reported 0 events in both groups and a
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_dropout_ae`, 
        col.diamond = "green4",
@@ -1826,7 +1881,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_dropout_ae`,
 
 #### Timepoint 3: *\> 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_dropout_ae`, 
        col.diamond = "green4",
@@ -1850,7 +1905,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_dropout_ae`,
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_serious`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -1871,7 +1926,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_serious`,
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_serious`, 
        col.diamond = "firebrick4",
@@ -1893,9 +1948,25 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_serious`,
 
 #### Timepoint 3: *\> 13 weeks*
 
-No usable data available from RCT.
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
-### 6.2.13 Death
+forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_serious`, 
+       col.diamond = "firebrick4",
+       col.square =   "firebrick3",
+                 rightcols = c("effect", "ci","Overall"), 
+                 rightlabs = c("OR", "95%-CI", "Risk of bias"),  
+       label.c = "quetiapine",
+       xlim=c(0.2,5),
+                 label.e = unique(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_serious`$data$treat1_new), 
+                 subgroup.hetstat = TRUE, overall.hetstat =FALSE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
+                 overall = FALSE, prediction.subgroup = FALSE,
+                 subgroup = TRUE, fixed=TRUE,
+                 label.left = "TAAR1 better", label.right="Antipsychotic better")
+
+
+```
+
+**Figure 54** Forest plot for serious adverse events for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the studies for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.6.2.13 Death
 
 #### Timepoint 1: *1 day - 2 weeks*
 

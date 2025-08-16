@@ -21,7 +21,7 @@ continuous_outcomes_md<-c("weight","prolactin") #qtc interval not used here as d
 dichotomous_outcomes_common<-c("dropout_any", 'dropout_ae', "adverse_event", "response", "relapse",
                                "anticholinergic_symptom", "anxiety","agitation", "headache", "hypotension", "dizziness",
                                "nausea_vomitting", "sedation", "hyperprolactinemia", "qtc_prolongation",
-                               "insomnia", "akathisia", "eps_symptoms", "weight_increased", "schizophrenia")
+                               "insomnia", "akathisia", "eps_symptoms", "weight_increased", "psychosis")
 dichotomous_outcomes_rare<-c("death", "serious")
 
 effic_outcomes<-c("overall", "positive", "negative", "functioning", "cognition", "depression", "response", "relapse")
