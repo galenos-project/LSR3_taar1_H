@@ -93,7 +93,7 @@ There were the following changes compared to the previous version of the review:
 
 1.  This document was restructured with clearer subcategories for the meta-analysis of the different comparisons and other sections to improve readability.
 2.  No changes in the methodology (e.g., eligibility criteria, search strategies, data synthesis approach). However, we preferred to use the total score of the Brief Negative Symptom Scale (BNSS) to measure negative symptoms, rather than the subscales or subscores of the PANSS, based on recent studies suggesting that the BNSS is more suitable than older scales [@weigel2023]. Accordingly, comparison 6.1.13 was updated, but the findings remained unchanged.
-3.  Data became available for three previously identified studies that had not been included in the analysis due to lack of data. These data were obtained from a full publication for [@milanovic2024], clinicaltrials.gov/EUCTR for [@hoffmann-laroche2024] [**To be filled**] or conference abstracts for ([@otsukapharmaceuticaldevelopmentcommercializationinc2024]; [@sirs2024])(<https://cnsscientificposters.ipostersessions.com/Default.aspx?s=30-4A-E4-FB-51-B0-CE-51-94-ED-E5-96-B7-42-A4-D0>). These provided data for new comparisons (i.e., adjunctive treatment to antipsychotics with TAAR1 agonists vs. placebo), additional outcomes (e.g., relapse), and longer-term timepoints. The respective analyses were updated accordingly. There were no new data for the primary outcome in adults with acute schizophrenia, but one additional study was terminated earlier [@sumitomo2024] but no data are available to be included in the analysis, thus, we assessed the potenital impact of the omission of this data in a sensitivty analysis (see 9.3).
+3.  Data became available for three previously identified studies that had not been included in the analysis due to lack of data. These data were obtained from a full publication for [@milanovic2024], clinicaltrials.gov/EUCTR for [@hoffmann-laroche2024] [**To be filled**] or conference abstracts for ([@otsukapharmaceuticaldevelopmentcommercializationinc2024]; [@sirs2024])(<https://cnsscientificposters.ipostersessions.com/Default.aspx?s=30-4A-E4-FB-51-B0-CE-51-94-ED-E5-96-B7-42-A4-D0>). These provided data for new comparisons (i.e., adjunctive treatment to antipsychotics with TAAR1 agonists vs. placebo), additional outcomes (e.g., relapse), and longer-term timepoints. The respective analyses were updated accordingly. There were no new data for the primary outcome in adults with acute schizophrenia, but one additional study was terminated earlier [@sumitomo2024] but no data are available to be included in the analysis, thus, we assessed the potenital impact of the omission of this data in a sensitivty analysis (see 9.3). In addition, we examined post-hoc "schizophrenia"as an adverse event reported in clinical trials involving participants with schizophrenia.
 4.  Two additional studies were identified in the updated searches: i) @pet_ralmitaront, a two-period crossover randomized trial examining ralmitaront 150 mg/day versus placebo, each administered for two weeks, in patients with clinically stable schizophrenia, assessing neuroimaging measures and safety— no data were available, ii) @otsuka_new an ongoing phase III double-blind randomized trial comparing ulotaront 75 mg/day, 150 mg/day, and placebo in individuals with acute schizophrenia over six weeks.
 5.  Typos were corrected, and comparison 6.2.11 (dropouts due to adverse events) was revised, as dropouts due to any reason had been mistakenly reported instead of dropouts specifically due to adverse events.
 6.  We did not use continuity correction in fixed-effects models for dichotomous oucomes using the Mantel-Haenszel method.
@@ -102,7 +102,7 @@ There were the following changes compared to the previous version of the review:
 
 1.  We searched for all controlled and uncontrolled studies examining TAAR1 agonists. In the first and second iteration of the review, we analyzed usable data from all randomized controlled studies comparing any TAAR1 agonist to placebo or current antipsychotics in people with psychosis, other mental health conditions, or healthy volunteers. We did not include uncontrolled studies, except for mechanistic insights (see the extended data for additional explanations).
 
-2.  We examined efficacy outcomes, including overall symptoms of psychosis (primary outcome) and symptom domains, dropouts due to any reason, and adverse events. Safety outcomes included death, serious adverse events, and specific adverse events. We also sought mechanistic outcomes, specifically neurobiological measures of dopaminergic, glutamatergic, and serotonergic signalling. We examined these outcomes at three time points: immediately after a single dose up to 2 weeks of treatment, 3-13 weeks of treatment (preferably at 6 weeks), and longer-term outcomes.
+2.  We examined efficacy outcomes, including overall symptoms of psychosis (primary outcome) and symptom domains, response to treatment and relapse, as well as dropouts due to any reason and adverse events. Safety outcomes included death, serious adverse events, and specific adverse events. We also sought mechanistic outcomes, specifically neurobiological measures of dopaminergic, glutamatergic, and serotonergic signalling. We examined these outcomes at three time points: immediately after a single dose up to 2 weeks of treatment, 3-13 weeks of treatment (preferably at 6 weeks), and longer-term outcomes.
 
 3.  In terms of efficacy outcomes, we pooled the data for each specific subgroup, considering that differences can be expected among different diagnoses (e.g., schizophrenia and Parkinson's disease psychosis) and patient subgroups (e.g., patients with an acute episode of schizophrenia or with predominant negative symptoms). In terms of other outcomes, we combined data from all subgroups but also presented data separately for each subgroup.
 
@@ -163,7 +163,7 @@ The usable studies compared single or multiple doses of two TAAR1 agonists (i.e.
 
 *Seven studies* used a parallel design to examine the efficacy and safety of multiple doses of TAAR1 agonists in psychosis within 3-13 weeks (six studies) and \>13 weeks (1 study):
 
--   *Four studies* examining daily doses of TAAR1 agonists in adults with an acute episode of schizophrenia spectrum conditions for 4-6 weeks, 3 examined ulotaront [@RN110; @RN111; @RN112] and 1 examined ralmitaront [@RN113]. These studies used placebo as a control group, and the 1 study on ralmitaront also used the antipsychotic risperidone as an active comparator.
+-   *Four studies* examining daily doses of TAAR1 agonists in adults with an acute episode of schizophrenia spectrum conditions for 4-6 weeks, 3 examined ulotaront [@RN110; @RN111; @RN112] and 1 examined ralmitaront [@RN113]. These studies used placebo as a control group, and the 1 study on ralmitaront also used the antipsychotic risperidone as an active comparator. *One study* examined the efficacy and safety of ulotaront in comparison to placebo in adolescents with an acute episode schizophrenia (NCT04072354). This study had two parts with adults and adolescents. This study has been recently completed, and although some usable data in the adult population are available (see above), these are not available for the adolescents.
 
 -   *One study* compared ralmitaront as monotherapy or as an adjunct to antipsychotics in adults with schizophrenia spectrum conditions and negative symptoms for 12 weeks [@hoffmann-laroche2024].
 
@@ -186,8 +186,6 @@ The usable studies compared single or multiple doses of two TAAR1 agonists (i.e.
 ## 4.2 Completed studies with unavailable data
 
 Data from the following studies were unavailable:
-
--   *One study* examined the efficacy and safety of ulotaront in comparison to placebo in adolescents with an acute episode schizophrenia (NCT04072354). This study had two parts with adults and adolescents. This study has been recently completed, and although some usable data in the adult population are available (see above), these are not available for the adolescents.
 
 -   *One study* examined the efficacy and safety of two ulotaront doses of 50mg/d and 75mg/d in comparison to placebo in 83 adults with an acute episode of schizophrenia (NCT04825860). The study was terminated early in 2023-10.
 
@@ -589,7 +587,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_dropout_any`,
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=10, fig.height=5}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=6}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_dropout_any`, 
        col.diamond = "green4",
        col.square =   "green3",     
@@ -634,7 +632,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_dropout_ae`,
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=5}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=6}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_dropout_ae`, 
        col.diamond = "green4",
        col.square =   "green3",     
@@ -677,7 +675,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_serious`,
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=5}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=6}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_serious`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -722,7 +720,7 @@ There were available usable data from four studies (i.e., [@RN116; @RN115; @RN12
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=5}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_death`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -764,7 +762,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_adverse_event`,
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=5}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=6}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_adverse_event`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -812,12 +810,11 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_anticholinergic_symptom`,
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
        label.c="placebo",      
-       leftcols = c("studlab",  "effect", "ci"),          
-        rightcols = c("Overall"), rightlabs = c("Risk of bias"),   
-                 label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_anticholinergic_symptom`$data$treat1_new), 
-                 subgroup.hetstat = TRUE, overall.hetstat =FALSE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = FALSE, prediction.subgroup = FALSE, prediction=FALSE,
-                 subgroup = FALSE, fixed=TRUE, random=TRUE,
+       rightcols = c("effect", "ci", "Overall"),rightlabs = c("OR", "95%-CI", "Risk of bias"),
+                 label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_adverse_event`$data$treat1_new), 
+                 subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
+                 subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
 ```
@@ -887,9 +884,9 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_dizziness`,
        col.square =   "firebrick3",     
        label.c="placebo",      
        rightcols = c("effect", "ci", "Overall"),rightlabs = c("OR", "95%-CI", "Risk of bias"),
-                 label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_dizziness`$data$treat1_new), 
-                 subgroup.hetstat = TRUE, overall.hetstat =FALSE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = FALSE, prediction.subgroup = FALSE, prediction = FALSE,
+                 label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_adverse_event`$data$treat1_new), 
+                 subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
                  subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
@@ -924,7 +921,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_nausea_vomitting`,
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=5}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=6}
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_nausea_vomitting`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -1175,14 +1172,14 @@ No usable data available from RCT.
 #### Timepoint 2: *3 weeks - 13 weeks*
 
 ```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
-forest(`meta_comp_taar1_vs_placebo_3-13 weeks_eps_symptoms`, 
+forest(`meta_comp_taar1_vs_placebo_3-13 weeks_eps_symptoms`,
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
        label.c="placebo",      
        rightcols = c("effect", "ci", "Overall"),rightlabs = c("OR", "95%-CI", "Risk of bias"),
-                 label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_eps_symptoms`$data$treat1_new), 
-                 subgroup.hetstat = FALSE, overall.hetstat =FALSE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = FALSE, prediction.subgroup = FALSE, prediction = FALSE,
+                 label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_adverse_event`$data$treat1_new), 
+                 subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
                  subgroup = FALSE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
@@ -1257,7 +1254,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_agitation`,
                  label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_agitation`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
                  overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
-                 subgroup = FALSE, fixed=TRUE, random=TRUE,
+                 subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
 
@@ -1292,7 +1289,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_headache`,
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=6}
 
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_headache`, 
        col.diamond = "firebrick4",
@@ -1302,7 +1299,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_headache`,
                  label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_headache`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
                  overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
-                 subgroup = FALSE, fixed=TRUE, random=TRUE,
+                 subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
 ```
@@ -1338,7 +1335,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_sedation`,
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_sedation`, 
        col.diamond = "firebrick4",
@@ -1367,7 +1364,7 @@ No usable data available from RCT.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=5}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=6}
 
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_insomnia`, 
        col.diamond = "firebrick4",
@@ -1377,7 +1374,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_insomnia`,
                  label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_insomnia`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
                  overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
-                 subgroup = FALSE, fixed=TRUE, random=TRUE,
+                 subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
 ```

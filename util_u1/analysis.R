@@ -232,7 +232,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
          if(length(unique(pairwise_i$crossover_periods))==1){
          meta_comp<-metabin(data=pairwise_i, 
                             event.e = event1_new, n.e=n1_new, event.c = event2_new, n.c=n2_new,
-                            sm=sm_used, random=random_true, fixed=fixed_true,  MH.exact = ifelse(fixed_true==TRUE, TRUE, FALSE), #2025.08.15: Not applying continuity correcton
+                            sm=sm_used, random=random_true, fixed=fixed_true, 
                             studlab = study_name_drug, prediction = prediction_true, subgroup=population)
          } else{
            meta_comp<-metagen(data=pairwise_i, #Present forest plots using crossover corrections
