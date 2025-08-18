@@ -10,7 +10,7 @@ rm(list=ls())
 
 master<-read_xlsx("data_u1/data_2025-08-15_LSR3_H.xlsx") #Main dataset
 
-rob<-read_xlsx("data_u1/rob_secondary_2025.01.16.xlsx") #RoB assessments for all outcomes
+rob<-read_xlsx("data_u1/rob_secondary_2025.08.15.xlsx") #RoB assessments for all outcomes
 
 outcome_names<-read_xlsx("data_u1/outcome_names.xlsx") #Refined outcome names usesd later for refining the SoE table
 outcome_names<-outcome_names %>% mutate(id_outcome_population=paste0(outcome, population)) 
@@ -420,7 +420,7 @@ meta_outcome<-rbind(meta_outcome, meta_outcome_qtc)
 #Prepartion of the meta outcome object
 meta_outcome<-meta_outcome %>% filter(!is.na(outcome))
 
-results_matrix<-read_xlsx("data_u1/reporting_bias table_2025.01.16.xlsx") #Calculate the number of possible n and k for efficacy and other outcomes
+results_matrix<-read_xlsx("data_u1/reporting_bias table_2025.08.15.xlsx") #Calculate the number of possible n and k for efficacy and other outcomes
 
 results_matrix_summary<-results_matrix %>% 
   mutate(timepoint=case_when(
@@ -440,11 +440,12 @@ Population=="Parkinson's disease psychosis" ~ "Parkinson Disease Psychosis",
 Population=="Schizophrenia (clinically stable)" | Population =="Schizophrenia (clinically stable, MetS)" ~ "Schizophrenia spectrum (clinically stable)",
 Population =="Narcolepsy-cataplexy" | Population =="Volunteers" ~ "Other"
   )) %>% 
-  filter(`Age group`!="Adolescents") %>% #Exclude the age group of adolescents, as unclear if this part was conducted and no other study on this age group 
-  rename(sample_size=`Sample size`, study_name=`Study name`) %>%
-  select(comparison, timepoint, population, study_name, sample_size) 
+ # filter(`Age group`!="Adolescents") %>% #Exclude the age group of adolescents, as unclear if this part was conducted and no other study on this age group 
+  rename(sample_size=`Sample size`, study_name=`Study name`, age_group=`Age group`) %>%
+  select(comparison, timepoint, population, age_group, study_name, sample_size) 
 
 results_matrix_summary_efficacy<-results_matrix_summary %>%
+  filter(age_group!="Adolescents") %>% #Exclude the age group from the efficacy as no data were reported, and it would have been analyzed separately
   select(comparison, timepoint, population, sample_size) %>%
   group_by(comparison, timepoint, population) %>%
   summarise(k_possible=n(),
@@ -564,7 +565,8 @@ left_join(outcome_names)   %>%
     population=="Schizophrenia spectrum (negative symptoms)" ~ "adults with schizophrenia and predominant negative symptoms",
     population=="Parkinson Disease Psychosis" ~"Parkinson Disease Psychosis")) %>%
   mutate(text_description=paste0(text_comparison," in ", text_population)) %>%
-  mutate(other_bias=ifelse(comparison=="taar1_vs_placebo" & (id_outcome_population=="overallSchizophrenia spectrum (acute episode)" | id_outcome_population=="responseSchizophrenia spectrum (acute episode)"),
+  mutate(other_bias=ifelse(comparison=="taar1_vs_placebo" & (id_outcome_population=="overallSchizophrenia spectrum (acute episode)" | id_outcome_population=="responseSchizophrenia spectrum (acute episode)" |
+                             id_outcome_population=="positiveSchizophrenia spectrum (acute episode)" | id_outcome_population=="negativeSchizophrenia spectrum (acute episode)"),
                            "Three trials were conducted during COVID-19 (2 in ulotaront, 1 in ralmitaront), which in some cases could be associated with factors related to smaller effect sizes. Specifically, a pooled analysis of the two Phase III ulotaront trials, using only the participants enrolled before COVID-19, showed effect sizes like the Phase II ulotaront trial. This may have underestimated the effects of TAAR1 agonists compared to placebo in favor of the latter.", "No clear indication of other biases"))
 
 

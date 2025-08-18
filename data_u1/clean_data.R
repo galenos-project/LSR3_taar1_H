@@ -55,7 +55,7 @@ write_xlsx(data, "data_u1/data_2025-08-15_LSR3_H.xlsx")
 #data_unique_studies<-data %>% select(study_name, study_design, population, state, sample_n, age_mean) %>% unique() #only for descriptives
 
 #Cleaning of the included studies (RCT or not, completed or ongoing)
-studies<-(read_xlsx('data_u1/included_studies_2025-01-16_LSR3_H.xlsx', na = "NA")) 
+studies<-(read_xlsx('data_u1/included_studies_2025-08-15_LSR3_H.xlsx', na = "NA")) 
 studies<-studies %>% mutate(rct=ifelse(grepl("RCT", Design), 1,0),
                             conditions=ifelse(grepl("schizophrenia", Population),"Schizophrenia",
                                               ifelse(grepl("Parkinson", Population),"Parkinson's disease psychosis",
