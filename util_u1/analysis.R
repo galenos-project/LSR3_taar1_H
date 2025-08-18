@@ -232,7 +232,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
          if(length(unique(pairwise_i$crossover_periods))==1){
          meta_comp<-metabin(data=pairwise_i, 
                             event.e = event1_new, n.e=n1_new, event.c = event2_new, n.c=n2_new,
-                            sm=sm_used, random=random_true, fixed=fixed_true, 
+                            sm=sm_used, random=random_true, fixed=fixed_true, #Default method MH.exact for fixed effects, IV-REML for random-effects
                             studlab = study_name_drug, prediction = prediction_true, subgroup=population)
          } else{
            meta_comp<-metagen(data=pairwise_i, #Present forest plots using crossover corrections
@@ -242,7 +242,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
             }
          
          
-         meta_comp_plac<-metaprop(data=pairwise_i, event=event2_new, n=n2_new, method="Inverse", #Inverse instead of GLMM was used because in some occassions GLMM did not run, Logit transformation was used
+         meta_comp_plac<-metaprop(data=pairwise_i, event=event2_new, n=n2_new, method="GLMM", #GLMM was used, and logit transformation the default 
                                   random=random_true, fixed=fixed_true,  
                                   studlab = study_name_drug, prediction = prediction_true, subgroup=population)
          

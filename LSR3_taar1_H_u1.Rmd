@@ -57,9 +57,12 @@ mainfont: Arialh
       rename(outcome=MedDRA_an) 
 
     #prisma data
-    prisma<-read.csv("data_u1/LSR3_H_PRISMA_2024.01.23.csv") #csv file for the prisma2020  
+    prisma<-read.csv("data_u1/LSR3_H_PRISMA_2024.01.23.csv") #csv file for the prisma2020
+    prisma2<-read.csv("data_u1/LSR3_H_PRISMA_2025.08.15.csv") #csv file for the prisma2020  
+
     prisma<-PRISMA_data(prisma)
 
+    prisma2<-PRISMA_data(prisma2)
     #risk of bias data
     rob<-read_xlsx("data_u1/rob_secondary_2025.01.16.xlsx")
     #results matrix table
@@ -97,6 +100,8 @@ There were the following changes compared to the previous version of the review:
 4.  Two additional trials were identified in the updated searches: i) @pet_ralmitaront, a two-period crossover randomized trial examining ralmitaront 150 mg/day versus placebo, each administered for two weeks, in patients with clinically stable schizophrenia, assessing neuroimaging measures and safety - no data were available, ii) @otsuka_new an ongoing phase III double-blind randomized trial comparing ulotaront 75 mg/day, 150 mg/day, and placebo in individuals with acute schizophrenia over six weeks.
 5.  Typos were corrected, and comparison 6.2.11 (dropouts due to adverse events) was revised, as dropouts due to any reason had been mistakenly reported instead of dropouts specifically due to adverse events. Additional data were available for these outcomes as well.
 6.  We preferred using the term "trials" instead of "studies", given two studies had two-parts involving either adult and adolescent populations [@RN111], or examining monotherapy or add-on treatments [@hoffmann-laroche2024].
+7.  For meta-analysis using fixed-effect Mantel–Haenszel models we did not apply continuity corrections.
+8.  For meta-analyses of placebo-arm event proportions, we used generalized linear mixed models rather than inverse-variance methods [@schwarzer2019]..
 
 ## 1.2 Methodological approach
 
@@ -106,13 +111,13 @@ There were the following changes compared to the previous version of the review:
 
 3.  In terms of efficacy outcomes, we pooled the data for each specific subgroup, considering that differences can be expected among different diagnoses (e.g., schizophrenia and Parkinson's disease psychosis) and patient subgroups (e.g., patients with an acute episode of schizophrenia or with predominant negative symptoms). In terms of other outcomes, we combined data from all subgroups but also presented data separately for each subgroup.
 
-4.  Summary of data extraction: For continuous outcomes, we preferred change over endpoint scores and data from appropriate models or imputations considering missing outcome data. For dichotomous outcomes, we again preferred data from all participants, but in case of participants with missing outcome data, we assumed that they did not experience the event; an assumption usually used in meta-analysis in schizophrenia (e.g., @RN2). In terms of crossover trials, we preferred data from appropriate models considering period or carry-over effects. If not available, we assumed a correlation (i.e., 0.2 for adverse events) to correct the variance of the estimates according to @elbourne2002 . If an outcome was measured multiple times after a single dose of the drug, we calculated the area under the curve according to the linear trapezoid rule [@RN120] and divided by the time of assessment to remove the time component.
+4.  Summary of data extraction: For continuous outcomes, we preferred change over endpoint scores and data from appropriate models or imputations considering missing outcome data. For dichotomous outcomes, we again preferred data from all participants, but in case of participants with missing outcome data, we assumed that they did not experience the event; an assumption usually used in meta-analysis in schizophrenia (e.g., @RN2). In terms of crossover trials, we preferred data from appropriate models considering period or carry-over effects. If not available, we assumed a correlation (i.e., 0.2 for adverse events) to correct the variance of the estimates according to @elbourne2002 . A continuity correction of 0.5 was applied in cases of zero events in one of the groups for the correction of effect sizes in crossover trials. If an outcome was measured multiple times after a single dose of the drug, we calculated the area under the curve according to the linear trapezoid rule [@RN120] and divided by the time of assessment to remove the time component.
 
 5.  Risk of bias was assessed using the RoB2 tool [@RN64] for parallel and crossover trials. When only one domain had some concerns, we assigned an overall low risk of bias. Otherwise, we used the worst judgment across domains.
 
 6.  The effect sizes were as follows: 1) standardized mean differences (SMD) for efficacy outcomes, given that various scales have been used in the literature to allow comparability of the findings with other trials of antipsychotic drugs; 2) mean differences (MD) for laboratory measures, i.e., weight (kg), QTc interval (msec), and prolactin levels (ng/ml); 3) odds ratios (OR) for dichotomous outcomes, which were also converted to absolute risks using a control event rate [@RN71]. 95% confidence intervals (95% CI) are presented, but 95% prediction intervals are not presented due to the small number of trials. Other effect sizes were not used in the first and second iteration of the review, e.g., those used in meta-analysis of variance due to the paucity of data.
 
-7.  Meta-analysis was conducted primarily using a random-effects model with inverse variance and REML estimator of tau-squared. Due to the small number of trials (\<5) in the majority of the analyses, we did not correct the confidence intervals using the Hartung-Knapp method [@RN82], and we also presented the findings from fixed-effects models using the Mantel-Haenszel method throughout. Continuity corrections of 0.5 were applied in case of 0 events in one of the groups. Meta-analysis of proportions was conducted to pool the control groups to estimate the control event rate using logit transformation of the proportions and inverse variance method [@schwarzer2019].
+7.  Meta-analysis was conducted primarily using a random-effects model with inverse variance and REML estimator of tau-squared. Due to the small number of trials (\<5) in the majority of the analyses, we did not correct the confidence intervals using the Hartung-Knapp method [@RN82], and we also presented the findings from fixed-effects models throughout (using Mantel-Haenszel method for dichotomous outcomes, without continuity correction). A continuity correction of 0.5 was applied only when one group in a trial had zero events, to enable presentation of effect sizes in the forest plots. Meta-analysis of proportions was conducted to pool the control groups to estimate the control event rate using logit transformation of the proportions and generalized linear mixed models [@schwarzer2019].
 
 8.  Sensitivity analysis of the primary outcome included using fixed-effect methods (*post-hoc* due to the small number of trials), restricting the analysis to trials with an overall low risk of bias, and excluding trials with imputed values. A *post-hoc* sensitivity analysis was also conducted in this iteration to examine the potential impact of omitting the findings of a prematurely terminated trial [@sumitomo2024] on the summary effects of the primary outcome.
 
@@ -133,10 +138,10 @@ There were the following changes compared to the previous version of the review:
 **The current flow diagram presented below reflects that of the previous version of the review. It is currently being updated.**
 
 ```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=8}
-PRISMA_flowdiagram(prisma, previous = FALSE, other=TRUE)
+PRISMA_flowdiagram(prisma, previous = TRUE, other=FALSE)
 ```
 
-**Figure 1** PRISMA 2020 flow diagram. \*It should be noted that due to the limited data on mechanistic insights, we also presented narratively the findings from one of the excluded uncontrolled trials, since this was the only molecular neuroimaging trial @RN132; this trial is listed along with the 26 excluded trials due to wrong trial design in the PRISMA flow diagram.
+**Figure 1** PRISMA 2020 flow diagram for studies reporting randomized clinical trials (last search: 16.05.2025). \*It should be noted that due to the limited data on mechanistic insights, we also presented narratively the findings from one of the excluded uncontrolled trials, since this was the only molecular neuroimaging trial @RN132; this trial is listed along with the 27 excluded trials due to wrong trial design in the PRISMA flow diagram.
 
 # 3. Table of included trials
 
@@ -650,6 +655,8 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_dropout_ae`,
 
 **Figure 13** Forest plot for dropouts due to adverse event for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
+The exact adverse event leading to dropouts was not reported, but it may have included worsening of psychosis.
+
 #### Timepoint 3: *\> 13 weeks*
 
 No usable data available from RCT.
@@ -692,7 +699,11 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_serious`,
 
 ```
 
-**Figure 15** Forest plot for serious adverse events for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals
+**Figure 15** Forest plot for serious adverse events for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+
+Schizophrenia/psychosis/hallucinations was a major contributor to serious adverse events in @RN112 (placebo: 4/6, ulotaront: 24/25), @RN111 (placebo: 3/12, ulotaront: 22/23), @RN110 (placebo: 3/3, ulotaront: 1/2), and @hoffmann-laroche2022 (placebo: 1/1, ralmitaront: 3/3, risperidone: 0).
+
+According to the EUCTR registry and @sirs2024, a pre-specified analysis showed that the number of schizophrenia-related serious adverse events occurring during treatment or within 7 days of the last dose was smaller than the total number reported when also including hospitalizations occurring more than 7 days after the last dose. Specifically, in @RN112: placebo 1/4 vs. ulotaront 3/24, and in @RN111: placebo 0/3 vs. ulotaront 3/22.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -1334,7 +1345,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_sedation`,
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=6}
 
 forest(`meta_comp_taar1_vs_placebo_3-13 weeks_sedation`, 
        col.diamond = "firebrick4",
@@ -1410,6 +1421,8 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_psychosis`,
 
 **Figure 40** Forest plot for psychosis as an adverse event (e.g., worsening or exacerbaton of psychosis or halllucinations) for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. The overall risk of bias of the trials for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence intervals.
 
+Similar to the serious adverse events (see section 6.1.12), it was noted that in post-hoc analyses of @RN111 and @RN112, reported in @sirs2024, restricting to events during treatment or within seven days of the last dose, the number with worsening of psychosis as an adverse event was somewhat smaller (placebo: 4/6, ulotaront: 31/38 in @RN111; placebo: 8/9, ulotaront: 27/37 in @RN112).
+
 #### Timepoint 3: *\> 13 weeks*
 
 No usable data available from RCT.
@@ -1448,7 +1461,7 @@ ggplot(data=efficacy_primary,
                     xmax=ub), height=0.1,
                 width=0, position=position_dodge(width = 0.5), colour="royalblue4")+
   scale_size_continuous(guide=FALSE)+
-  geom_vline(xintercept=0, linetype='dashed')+
+  geom_vline(xintercept=0, linetype='solid')+
   facet_grid(~factor(population, levels=level_population))+
   ylab("")+
   xlab("SMD 95%CI (SMD>0: TAAR1 agonist better)")+
@@ -1507,7 +1520,7 @@ ggplot(data=safety_primary_plot,
   geom_errorbarh(aes(x=exp(point), xmin=exp(TE.random-1.96*seTE.random), 
                     xmax=exp(TE.random+1.96*seTE.random), colour=type_outcome), height=0.2,
                 width=0, position=position_dodge(width = 0.5))+
-  geom_vline(xintercept=1, linetype='dashed')+
+  geom_vline(xintercept=1, linetype='solid')+
   scale_size_continuous(guide=FALSE)+
   facet_grid(factor(MedDRA_group, levels=lever_order_meddra)~timepoint, scales = "free_y", space = "free")+
   scale_x_log10() +
@@ -1863,7 +1876,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_dropout_ae`,
                  rightcols = c("effect", "ci","Overall"), 
                  rightlabs = c("OR", "95%-CI", "Risk of bias"),  
        label.c = "risperidone",
-       xlim=c(0.2,5),
+       xlim=c(0.1,10),
                  label.e = unique(`meta_comp_taar1_vs_antipsychotic_3-13 weeks_dropout_any`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =FALSE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
                  overall = FALSE, prediction.subgroup = FALSE,
@@ -1962,7 +1975,23 @@ forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_serious`,
 
 ```
 
-**Figure 55** Forest plot for serious adverse events for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the trials for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.6.2.13 Death
+**Figure 55** Forest plot for serious adverse events for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the trials for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
+
+Schizophrenia/psychosis was the major contributor of serious adverse events in @otsukapharmaceuticaldevelopmentcommercializationinc2024 (placebo: 0, ulotaront: 10 out of 16). However, as reported before in section 6.1.12, these might include events during hospitalizations occurring more than 7 days after the last dose.
+
+### 6.2.13 Death
+
+#### Timepoint 1: *1 day - 2 weeks*
+
+There were available usable data from one trial [@RN115] but 0 deaths were reported so that could not provide estimable effect sizes with the current approach.
+
+#### Timepoint 2: *3 weeks - 13 weeks*
+
+There were available usable data from one trials [@hoffmann-laroche2022] but 0 deaths were reported so that could not provide estimable effect sizes with the current approach.
+
+#### Timepoint 3: *\> 13 weeks*
+
+There were available usable data from one trials [@otsukapharmaceuticaldevelopmentcommercializationinc2024] but 0 deaths were reported so that could not provide estimable effect sizes with the current approach.
 
 ### 6.2.14 Any adverse event
 
@@ -2673,6 +2702,8 @@ forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_psychosis`,
 
 **Figure 83** Forest plot for psychosis as an adverse event for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the trials for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
+Similar to the previous sections (6.1.12, 6.1.32, and 6.2.12), it is possible that schizophrenia-related events also included post-treatment hospitalizations occurring more than seven days after the last dose.
+
 ### 6.2.33 Summary outcome plots
 
 #### Efficacy outcomes
@@ -2713,7 +2744,7 @@ ggplot(data = efficacy_primary_2,
                  position = position_dodge(width = 0.5),
                  colour = "royalblue4") +
   scale_size_continuous(guide = FALSE) +
-  geom_vline(xintercept = 0, linetype = "dashed") +
+  geom_vline(xintercept = 0, linetype = "solid") +
   facet_grid(~ factor(population, levels = level_population)) +
   ylab("") +
   xlab("SMD 95% CI (SMD>0: TAAR1 agonist better)") +
@@ -2727,7 +2758,7 @@ ggplot(data = efficacy_primary_2,
 
 ```
 
-**Figure 84** Summary plot for efficacy outcomes at 4 and 52 weeks for the comparison of TAAR1 agonists versus antipscyhotcs in patients with acute or clinically stable schizophrenia, respectively. There were data for the timepoints of 3-13 weeks (ralmitaront vs. risperidone) and \>13 week (ulotaront vs. quetiapine). SMD\>0 correspond to more symptom improvement by TAAR1 agonists compared to antipsychotic. SMD: Standardized mean difference, 95%CI: 95% confidence interval. N=number of trials, n=number of participants.
+**Figure 84** Summary plot for efficacy outcomes at 4 and 52 weeks for the comparison of TAAR1 agonists versus antipscyhotcs in patients with acute or clinically stable schizophrenia, respectively. There were data for the timepoints of 3-13 weeks (acute: ralmitaront vs. risperidone) and \>13 week (clinically-stable: ulotaront vs. quetiapine). SMD\>0 correspond to more symptom improvement by TAAR1 agonists compared to antipsychotic. SMD: Standardized mean difference, 95%CI: 95% confidence interval. N=number of trials, n=number of participants.
 
 It should be noted that there were also data for response to treatment and relapse that are not displayed in this figure (see instead 2.6.8 and 2.6.9).
 
@@ -2776,7 +2807,7 @@ ggplot(data = safety_primary_plot_2,
                  height = 0.2,
                  width = 0,
                  position = position_dodge(width = 0.5)) +
-  geom_vline(xintercept = 1, linetype = "dashed") +
+  geom_vline(xintercept = 1, linetype = "solid") +
   scale_size_continuous(guide = FALSE) +
   facet_grid(factor(MedDRA_group, levels = lever_order_meddra) ~ timepoint,
              scales = "free_y", space = "free") +
@@ -3491,7 +3522,7 @@ ggplot(data = efficacy_primary3,
                  position = position_dodge(width = 0.5),
                  colour = "royalblue4") +
   scale_size_continuous(guide = FALSE) +
-  geom_vline(xintercept = 0, linetype = "dashed") +
+  geom_vline(xintercept = 0, linetype = "solid") +
   facet_grid(~ factor(population, levels = level_population)) +
   ylab("") +
   xlab("SMD 95% CI (SMD>0: TAAR1 agonist (add-on) better)") +
@@ -3558,7 +3589,7 @@ ggplot(data = safety_primary_plot3,
                  height = 0.2,
                  width  = 0,
                  position = position_dodge(width = 0.5)) +
-  geom_vline(xintercept = 1, linetype = "dashed") +
+  geom_vline(xintercept = 1, linetype = "solid") +
   scale_size_continuous(guide = FALSE) +
   facet_grid(factor(MedDRA_group, levels = lever_order_meddra) ~ timepoint,
              scales = "free_y", space = "free") +
@@ -3676,7 +3707,7 @@ ggplot(
     colour = study_name
   )
 ) +
-  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_hline(yintercept = 0, linetype = "solid") +
   geom_pointrange(
     position = position_dodge(width = 1.2),
     aes(shape = schedule),
@@ -3724,7 +3755,7 @@ ggplot(
     colour = study_name
   )
 ) +
-  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_hline(yintercept = 0, linetype = "solid") +
   geom_pointrange(
     position = position_dodge(width = 10),
     aes(shape = schedule),
@@ -3816,7 +3847,7 @@ ggplot(data = data_sens_missing, aes(x = es_missing)) +
   geom_line( aes(y = TE.random, colour="random"))+
   geom_ribbon(aes(ymin = ci.lb.fixed, ymax = ci.ub.fixed, fill="fixed"),   alpha = 0.2) +
   geom_line( aes(y = TE.fixed, colour="fixed"))+
-  geom_hline(yintercept = 0, linetype = "dashed", color = "black") +
+  geom_hline(yintercept = 0, linetype = "solid", color = "black") +
   geom_pointrange(aes(x = 0.62, y = meta_comp_overall_sch$TE.random, ymin = meta_comp_overall_sch$TE.random- 1.96*meta_comp_overall_sch$seTE.random, ymax =  meta_comp_overall_sch$TE.random+ 1.96*meta_comp_overall_sch$seTE.random, colour="random"),  size = 1) +
     geom_pointrange(aes(x = 0.65, y = meta_comp_overall_sch$TE.fixed, ymin = meta_comp_overall_sch$TE.fixed- 1.96*meta_comp_overall_sch$seTE.fixed, ymax =  meta_comp_overall_sch$TE.fixed+ 1.96*meta_comp_overall_sch$seTE.fixed, colour="fixed"), size = 1) +
   xlim(c(-0.65, 0.65))+
@@ -4049,6 +4080,8 @@ We assigned a "moderate risk" of other biases for the primary outcomes of over
     It should be noted that another trial was conducted during the COVID-19 pandemic [@RN113], but the potential impact of the pandemic on its execution has not been reported. Nonetheless, the possibility that the observed findings may underestimate the true effect cannot be excluded.
 
 No other biases were identified for almost all comparisons and outcomes.
+
+Of note, for safety outcomes (serious adverse events, worsening of psychosis, and possibly others), @RN111 and @RN112 also counted events according to their protocols from post-treatment hospitalizations occurring more than seven days after the last dose. In pre-specified analyses according to the EUCTR and @sirs2024 limited to on-treatment events or those within seven days post-dose, schizophrenia-related SAEs and to a lesser extent non-serious events were fewer (see 6.1.12 and 6.1.32). This was not considered a source of bias but was taken into account in the interpretation of findings.
 
 ## 11.2 Summary of evidence tables
 
