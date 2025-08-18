@@ -63,7 +63,7 @@ mainfont: Arialh
     #risk of bias data
     rob<-read_xlsx("data_u1/rob_secondary_2025.01.16.xlsx")
     #results matrix table
-    results_matrix<-read_xlsx("data_u1/reporting_bias table_2025.01.16.xlsx")
+    results_matrix<-read_xlsx("data_u1/reporting_bias_table_2025.08.15.xlsx")
     #SoE tables
     soe_sch_ac_ta1_pl_eff<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 1)
     soe_sch_neg_ta1_pl_eff<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 2)
@@ -3788,7 +3788,7 @@ data_sens_missing<-data.frame(es_missing=NA,
                               TE.random=NA, ci.lb.random=NA, ci.ub.random=NA,
                               TE.fixed=NA, ci.lb.fixed=NA, ci.ub.fixed=NA)
 
-for(es in seq(-0.50, 0.75, by=0.02)){
+for(es in seq(-0.60, 0.60, by=0.02)){
   d=es/j #Cohen's d from assumed es in Hedge's g 
   vd=((k^2)/(n*(k-1)))+((es^2)/(2*n)) # variance of cohen's d using the k and n of the trial
   vj=(j^2)*vd #variance of Hedge's g
@@ -3817,20 +3817,20 @@ ggplot(data = data_sens_missing, aes(x = es_missing)) +
   geom_ribbon(aes(ymin = ci.lb.fixed, ymax = ci.ub.fixed, fill="fixed"),   alpha = 0.2) +
   geom_line( aes(y = TE.fixed, colour="fixed"))+
   geom_hline(yintercept = 0, linetype = "dashed", color = "black") +
-  geom_pointrange(aes(x = 0.80, y = meta_comp_overall_sch$TE.random, ymin = meta_comp_overall_sch$TE.random- 1.96*meta_comp_overall_sch$seTE.random, ymax =  meta_comp_overall_sch$TE.random+ 1.96*meta_comp_overall_sch$seTE.random, colour="random"),  size = 1) +
-    geom_pointrange(aes(x = 0.85, y = meta_comp_overall_sch$TE.fixed, ymin = meta_comp_overall_sch$TE.fixed- 1.96*meta_comp_overall_sch$seTE.fixed, ymax =  meta_comp_overall_sch$TE.fixed+ 1.96*meta_comp_overall_sch$seTE.fixed, colour="fixed"), size = 1) +
-  xlim(c(-0.45, 0.85))+
-  ylim(c(-0.5, 0.85))+
+  geom_pointrange(aes(x = 0.62, y = meta_comp_overall_sch$TE.random, ymin = meta_comp_overall_sch$TE.random- 1.96*meta_comp_overall_sch$seTE.random, ymax =  meta_comp_overall_sch$TE.random+ 1.96*meta_comp_overall_sch$seTE.random, colour="random"),  size = 1) +
+    geom_pointrange(aes(x = 0.65, y = meta_comp_overall_sch$TE.fixed, ymin = meta_comp_overall_sch$TE.fixed- 1.96*meta_comp_overall_sch$seTE.fixed, ymax =  meta_comp_overall_sch$TE.fixed+ 1.96*meta_comp_overall_sch$seTE.fixed, colour="fixed"), size = 1) +
+  xlim(c(-0.65, 0.65))+
+  ylim(c(-0.8, 0.8))+
     scale_color_manual(name = "Model", values = c("random" = "#00BFC4", "fixed" = "#F8766D")) +
   scale_fill_manual(name = "Model", values = c("random" = "#00BFC4", "fixed" = "#F8766D")) +
   xlab("Assumed SMD of NCT04825860 to be included in the meta-analysis \n(SMD>0: TAAR1 agonists better to placebo)")+
   ylab("Summary effect (SMD 95%CI)")+
-  annotate("text", x = 0, y = 0.75, label = "Inclusion of omitted results \nfrom NCT04825860", hjust = 0, size = 4) +
-  annotate("text", x = 0.78, y = 0.75, label = "Original", hjust = 0, size = 4) +
+  annotate("text", x = -0.1, y = 0.75, label = "Inclusion of omitted results \nfrom NCT04825860", hjust = 0, size = 4) +
+  annotate("text", x = 0.58, y = 0.75, label = "Original", hjust = 0, size = 4) +
   theme_bw()
 ```
 
-**Figure 105** Exploration of the potential impact of the omitted data from one trial with unavailable results on the summary effect of the comparison of TAAR1 agonists vs. placebo on overall symptoms in acute schizophrenia at 3–13 weeks. The x-axis represents the point estimate of the SMD of the omitted results from [@sumitomo2024]. The y-axis represents the summary effects of a meta-analysis including the omitted results across the potential range of assumed effect sizes (from –0.5 to 0.75). The findings from the original meta-analysis without including the omitted results are also presented for comparison. The results from both the random- and fixed-effects models are shown.
+**Figure 105** Exploration of the potential impact of the omitted data from one trial with unavailable results on the summary effect of the comparison of TAAR1 agonists vs. placebo on overall symptoms in acute schizophrenia at 3–13 weeks. The x-axis represents the point estimate of the SMD of the omitted results from [@sumitomo2024]. The y-axis represents the summary effects of a meta-analysis including the omitted results across the potential range of assumed effect sizes (from –0.60 to 0.60). The findings from the original meta-analysis without including the omitted results are also presented for comparison. The results from both the random- and fixed-effects models are shown.
 
 It appears that the inclusion of the omitted results from [@sumitomo2024] would not have materially changed the summary effects in either the random- or fixed-effects meta-analysis. The findings were especially robust within the range of the most plausible effect sizes (e.g., between –0.2 and 0.4), with the point estimates of the meta-analysis falling within the range of trivial to small effects (e.g., between 0.10 and 0.17). Thus, it can be concluded that the omission of the results from [@sumitomo2024] would not have had a substantial impact on the summary effects of the meta-analysis for this comparison (see 10.4.1).
 
@@ -4004,7 +4004,7 @@ Thus, for within-trial biases, we assigned:
 
 -   "Moderate risk" when the included trials had a low risk or at most some concerns, mainly in the domain of missing outcome data, but more than 50% of the trials were assigned an overall judgement of some concerns.
 
-The justification was that, in most cases, some concerns were raised due to missing outcome data. A recent meta-epidemiological trial suggested that biases due to missing outcome data might underestimate the effects [@wang2024]. In schizophrenia trials, there is evidence that participants who dropped out may have a worse prognosis compared to those who stayed in the trial [@rabinowitz2008]. There were generally no clear differences in dropouts due to any reason between TAAR1 agonists and control conditions (**Figure 11**), *yet TAAR1 may be associated with higher dropout rates due to adverse events compared to placebo (**Figure 13**), possibly associated with worsening of psychosis in some of the studies rather than specific side-effects (Figure xxx)*. Therefore, we judged that a high risk of bias due to missing outcome data in efficacy outcomes in @RN13 and @hoffmann-laroche2024 could have possibly overestimated the effects of TAAR1 agonists compared to placebo in favor of the former. However, in other cases, when there were some concerns for safety, it is unclear whether missing outcome data could have led to biased findings.
+The justification was that, in most cases, some concerns were raised due to missing outcome data. A recent meta-epidemiological trial suggested that biases due to missing outcome data might underestimate the effects [@wang2024]. In schizophrenia trials, there is evidence that participants who dropped out may have a worse prognosis compared to those who stayed in the trial [@rabinowitz2008]. There were generally no clear differences in dropouts due to any reason between TAAR1 agonists and control conditions (**Figure 11**), yet TAAR1 were associated with higher dropout rates due to adverse events compared to placebo (**Figure 13**), possibly due to serious adverse events (**Figure 15)** and worsening of psychosis (**Figure 40)** rather than specific side-effects (**Figure 42**). Therefore, we judged that a high risk of bias due to missing outcome data in efficacy outcomes in @RN13 and @hoffmann-laroche2024 could have possibly overestimated the effects of TAAR1 agonists compared to placebo in favor of the former. However, in other cases, when there were some concerns for safety, it is unclear whether missing outcome data could have led to biased findings.
 
 Other domains of bias, such as bias due to randomization in a crossover trial [@RN124], potential biases due to period and carry-over effects in two trials [@RN124; @milanovic2024] , and due to deviations from intended intervention and outcome measurement in one open trial [@milanovic2024], were also considered, mainly within the overall judgment of potential risk of bias, and potentially in favor of the experimental intervention of TAAR1 agonists.
 
@@ -4062,7 +4062,7 @@ No other biases were identified for almost all comparisons and outcomes.
 knitr::kable(soe_sch_ac_ta1_pl_eff)
 ```
 
-**Table 3** Summary of evidence table for the comparison of TAAR1 agonists versus placebo for efficacy outcomes in adults with an acute episode of schizophrenia. There were data for ulotaront and ralmitaront. There is an uncertain/unclear dose-response indication (see **Figure 89**). Across-trial bias was evaluated using the ROB-ME approach [@page2023]. N=number of trials, n=number of participants. SMD: Standardized mean difference, OR: Odds ratio, 95%CI: 95% confidence interval.
+**Table 3** Summary of evidence table for the comparison of TAAR1 agonists versus placebo for efficacy outcomes in adults with an acute episode of schizophrenia. There were data for ulotaront and ralmitaront. There is an uncertain/unclear dose-response indication (see **Figure 103**). Across-trial bias was evaluated using the ROB-ME approach [@page2023]. N=number of trials, n=number of participants. SMD: Standardized mean difference, OR: Odds ratio, 95%CI: 95% confidence interval.
 
 ##### Adults with schizophrenia and predominant negative symptoms
 
@@ -4070,7 +4070,7 @@ knitr::kable(soe_sch_ac_ta1_pl_eff)
 knitr::kable(soe_sch_neg_ta1_pl_eff)
 ```
 
-**Table 4** Summary of evidence table for the comparison of TAAR1 agonists versus placebo for efficacy outcomes in adults with schizophrenia and predominant negative symptoms. There were data for ralmitaront. There is an uncertain/unclear dose-response indication (see **Figure 89**). Across-trial bias was evaluated using the ROB-ME approach [@page2023]. N=number of trials, n=number of participants. SMD: Standardized mean difference, OR: Odds ratio, 95%CI: 95% confidence interval.
+**Table 4** Summary of evidence table for the comparison of TAAR1 agonists versus placebo for efficacy outcomes in adults with schizophrenia and predominant negative symptoms. There were data for ralmitaront. There is an uncertain/unclear dose-response indication (see **Figure 104**). Across-trial bias was evaluated using the ROB-ME approach [@page2023]. N=number of trials, n=number of participants. SMD: Standardized mean difference, OR: Odds ratio, 95%CI: 95% confidence interval.
 
 ##### Parkinson's disease psychosis
 
@@ -4082,13 +4082,13 @@ knitr::kable(soe_pd_ta1_pl_eff)
 
 #### Dropouts and side-effects
 
-##### Adults with psychosis, other mental health conditions and healthy volunteers
+##### Individiduals with psychosis, other mental health conditions and healthy volunteers
 
 ```{r echo=FALSE, fig.width=12, fig.height=8}
 knitr::kable(soe_all_ta1_pl_saf)
 ```
 
-**Table 6** Summary of evidence table for the comparison of TAAR1 agonists versus placebo for dropouts and side-effects in adults with psychosis, other mental health conditions and healthy volunteers. There were data for ulotaront and ralmitaront. Across-trial bias was evaluated using the ROB-ME approach [@page2023]. N=number of trials, n=number of participants. MD: Mean difference, OR: Odds ratio, 95%CI: 95% confidence interval.
+**Table 6** Summary of evidence table for the comparison of TAAR1 agonists versus placebo for dropouts and side-effects in individuals with psychosis, other mental health conditions and healthy volunteers. There were data for ulotaront and ralmitaront, mainly for adult participants. Across-trial bias was evaluated using the ROB-ME approach [@page2023]. N=number of trials, n=number of participants. MD: Mean difference, OR: Odds ratio, 95%CI: 95% confidence interval.
 
 ### 11.2.21 TAAR1 agonists versus antipsychotics
 
@@ -4130,7 +4130,7 @@ knitr::kable(soe_all_ta1_apd_saf)
 knitr::kable(soe_sch_neg_ta1_pl_addon_eff)
 ```
 
-**Table 10** Summary of evidence table for the comparison of TAAR1 agonists versus placebo as adjunctive to antipsychotict treatment for efficacy outcomes in adults with schizophrenia and predominant negative symptoms. There were data for ralmitaront. There is an uncertain/unclear dose-response indication (see **Figure 89**). Across-trial bias was evaluated using the ROB-ME approach [@page2023]. N=number of trials, n=number of participants. SMD: Standardized mean difference, OR: Odds ratio, 95%CI: 95% confidence interval.
+**Table 10** Summary of evidence table for the comparison of TAAR1 agonists versus placebo as adjunctive to antipsychotict treatment for efficacy outcomes in adults with schizophrenia and predominant negative symptoms. There were data for ralmitaront. There is an uncertain/unclear dose-response indication (see **Figure 104**). Across-trial bias was evaluated using the ROB-ME approach [@page2023]. N=number of trials, n=number of participants. SMD: Standardized mean difference, OR: Odds ratio, 95%CI: 95% confidence interval.
 
 #### Dropouts and side-effects
 

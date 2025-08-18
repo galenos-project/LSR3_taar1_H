@@ -420,7 +420,7 @@ meta_outcome<-rbind(meta_outcome, meta_outcome_qtc)
 #Prepartion of the meta outcome object
 meta_outcome<-meta_outcome %>% filter(!is.na(outcome))
 
-results_matrix<-read_xlsx("data_u1/reporting_bias table_2025.08.15.xlsx") #Calculate the number of possible n and k for efficacy and other outcomes
+results_matrix<-read_xlsx("data_u1/reporting_bias_table_2025.08.15.xlsx") #Calculate the number of possible n and k for efficacy and other outcomes
 
 results_matrix_summary<-results_matrix %>% 
   mutate(timepoint=case_when(
