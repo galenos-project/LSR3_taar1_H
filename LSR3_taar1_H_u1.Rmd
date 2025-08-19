@@ -57,16 +57,15 @@ mainfont: Arialh
       rename(outcome=MedDRA_an) 
 
     #prisma data
-    prisma<-read.csv("data_u1/LSR3_H_PRISMA_2024.01.23.csv") #csv file for the prisma2020
-    prisma2<-read.csv("data_u1/LSR3_H_PRISMA_2025.08.15.csv") #csv file for the prisma2020  
-
+    prisma<-read.csv("data_u1/LSR3_H_PRISMA_2025.08.15.csv") #csv file for the prisma2020 
     prisma<-PRISMA_data(prisma)
 
-    prisma2<-PRISMA_data(prisma2)
     #risk of bias data
-    rob<-read_xlsx("data_u1/rob_secondary_2025.01.16.xlsx")
+    rob<-read_xlsx("data_u1/rob_secondary_2025.08.15.xlsx")
+
     #results matrix table
     results_matrix<-read_xlsx("data_u1/reporting_bias_table_2025.08.15.xlsx")
+
     #SoE tables
     soe_sch_ac_ta1_pl_eff<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 1)
     soe_sch_neg_ta1_pl_eff<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 2)
@@ -115,7 +114,7 @@ There were the following changes compared to the previous version of the review:
 
 5.  Risk of bias was assessed using the RoB2 tool [@RN64] for parallel and crossover trials. When only one domain had some concerns, we assigned an overall low risk of bias. Otherwise, we used the worst judgment across domains.
 
-6.  The effect sizes were as follows: 1) standardized mean differences (SMD) for efficacy outcomes, given that various scales have been used in the literature to allow comparability of the findings with other trials of antipsychotic drugs; 2) mean differences (MD) for laboratory measures, i.e., weight (kg), QTc interval (msec), and prolactin levels (ng/ml); 3) odds ratios (OR) for dichotomous outcomes, which were also converted to absolute risks using a control event rate [@RN71]. 95% confidence intervals (95% CI) are presented, but 95% prediction intervals are not presented due to the small number of trials. Other effect sizes were not used in the first and second iteration of the review, e.g., those used in meta-analysis of variance due to the paucity of data.
+6.  The effect sizes were as follows: 1) standardized mean differences (SMD) for efficacy outcomes, given that various scales have been used in the literature to allow comparability of the findings with other trials of antipsychotic drugs; 2) mean differences (MD) for laboratory measures, i.e., weight (kg), QTc interval (msec), and prolactin levels (ng/ml); 3) odds ratios (OR) for dichotomous outcomes, which were also converted to absolute risks using a control event rate [@RN71]. 95% confidence intervals (95% CI) are presented, and 95% prediction intervals were presented when there were available data for more than 5 studies. Other effect sizes were not used in the first and second iteration of the review, e.g., those used in meta-analysis of variance due to the paucity of data.
 
 7.  Meta-analysis was conducted primarily using a random-effects model with inverse variance and REML estimator of tau-squared. Due to the small number of trials (\<5) in the majority of the analyses, we did not correct the confidence intervals using the Hartung-Knapp method [@RN82], and we also presented the findings from fixed-effects models throughout (using Mantel-Haenszel method for dichotomous outcomes, without continuity correction). A continuity correction of 0.5 was applied only when one group in a trial had zero events, to enable presentation of effect sizes in the forest plots. Meta-analysis of proportions was conducted to pool the control groups to estimate the control event rate using logit transformation of the proportions and generalized linear mixed models [@schwarzer2019].
 
@@ -133,15 +132,13 @@ There were the following changes compared to the previous version of the review:
 
 **We present below the results, including the PRISMA flow diagram [@page2021] , table of included trials, risk of bias assessment, and forest plots, to facilitate a better understanding of the summary of evidence tables and the manuscript. Please refer to the detailed description of the findings in the latter part of the manuscript for more information.**
 
-# 2. Flow of trial selection
-
-**The current flow diagram presented below reflects that of the previous version of the review. It is currently being updated.**
+# 2. Flow of study selection
 
 ```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=8}
-PRISMA_flowdiagram(prisma, previous = TRUE, other=FALSE)
+PRISMA_flowdiagram(prisma, previous = TRUE, detail_databases = TRUE, detail_registers = TRUE, other=FALSE, font = "Arial", fontsize = 12)
 ```
 
-**Figure 1** PRISMA 2020 flow diagram for studies reporting randomized clinical trials (last search: 16.05.2025). \*It should be noted that due to the limited data on mechanistic insights, we also presented narratively the findings from one of the excluded uncontrolled trials, since this was the only molecular neuroimaging trial @RN132; this trial is listed along with the 27 excluded trials due to wrong trial design in the PRISMA flow diagram.
+**Figure 1** PRISMA 2020 flow diagram for studies reporting randomized clinical trials (last search: 16.05.2025). Two eligible studies reported each of two trials, thus, the total number of trials was 28. In the updated search, additional records of studies already included were identified. \*It should be noted that due to the limited data on mechanistic insights, we also presented narratively the findings from one of the excluded uncontrolled trials, since this was the only molecular neuroimaging trial @RN132; this trial has been listed along with the excluded trials already in the first version of the review [@siafis2024].
 
 # 3. Table of included trials
 
@@ -154,7 +151,7 @@ knitr::kable(studies_to_plot[, 1:14])
 
 # 4. Description of included trials
 
-There were 27 eligible studies reporting 29 trials, which characteristics can be found in **Table 1**, with 27 trials (2826 participants) being completed and 3 trials being still ongoing (according to the status reported in clinicaltrials.gov up to 12.08.2025).
+There were 26 eligible studies reporting 28 trials, which characteristics can be found in **Table 1**, with 25 trials (2826 participants) being completed and 3 trials being still ongoing (according to the status reported in clinicaltrials.gov up to 12.08.2025).
 
 Two studies had two-parts involving either adult and adolescent populations [@RN111], or examining monotherapy or add-on treatments [@hoffmann-laroche2024].
 
@@ -162,7 +159,7 @@ The trials used to describe mechanistic insights are provided in the relevant se
 
 ## 4.1 Completed trials with usable data
 
-There were usable data for this analysis from 12 trials (2175 participants) [@RN116; @RN13; @RN110; @RN111; @RN112; @RN113; @RN115; @RN123; @RN124; @milanovic2024; @nct04115319; @hoffmann-laroche2024], which enrolled adult populations across multiple countries and were funded by the industry manufacturing the TAAR1 agonists.
+There were usable data for this analysis from 14 trials (2176 participants randomized) [@RN116; @RN13; @RN110; @RN111; @RN112; @RN113; @RN115; @RN123; @RN124; @milanovic2024; @nct04115319; @hoffmann-laroche2024] ([@hoffmann-laroche2024; @RN111 reported each 2 trials), which enrolled adult populations across multiple countries and were funded by the industry manufacturing the TAAR1 agonists.
 
 ### 4.1.1 Trials examining multiple doses of TAAR1 agonists
 
@@ -170,7 +167,7 @@ The usable trials compared single or multiple doses of two TAAR1 agonists (i.e.,
 
 *Seven trials* used a parallel design to examine the efficacy and safety of multiple doses of TAAR1 agonists in psychosis within 3-13 weeks (six trials) and \>13 weeks (1 trial):
 
--   *Four trials* examining daily doses of TAAR1 agonists in adults with an acute episode of schizophrenia spectrum conditions for 4-6 weeks, 3 examined ulotaront [@RN110; @RN111; @RN112] and 1 examined ralmitaront [@RN113]. These trials used placebo as a control group, and the 1 trial on ralmitaront also used the antipsychotic risperidone as an active comparator. One of these trials [@RN111] included also a second part, involvingadolescents with an acute episode schizophrenia (data for efficacy were not available).
+-   *Four trials* examining daily doses of TAAR1 agonists in adults with an acute episode of schizophrenia spectrum conditions for 4-6 weeks, 3 examined ulotaront [@RN110; @RN111; @RN112] and 1 examined ralmitaront [@RN113]. These trials used placebo as a control group, and the 1 trial on ralmitaront also used the antipsychotic risperidone as an active comparator. One of these trials [@RN111] included also a second part, involving adolescents with an acute episode schizophrenia (data for efficacy were not available).
 
 -   *Two trials* compared ralmitaront either as monotherapy or as an adjunct to antipsychotics in adults with schizophrenia spectrum conditions and negative symptoms for 12 weeks [@hoffmann-laroche2024].
 
@@ -603,7 +600,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_dropout_any`,
                    xlim=c(0.2,5),
                  label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_dropout_any`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = TRUE,
                  subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
@@ -628,7 +625,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_dropout_ae`,
        rightcols = c("Overall"), rightlabs = c("Risk of bias"),   
                  label.e = unique(`meta_comp_taar1_vs_placebo_1 day-2 weeks_dropout_ae`$data$treat1_new), 
                  subgroup.hetstat = FALSE, overall.hetstat =FALSE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = FALSE, prediction.subgroup = FALSE,
+                 overall = FALSE, prediction.subgroup = FALSE, 
                  subgroup = FALSE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
@@ -648,7 +645,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_dropout_ae`,
                    xlim=c(0.2,5),
                  label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_dropout_ae`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = TRUE,
                  subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 ```
@@ -693,7 +690,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_serious`,
                    xlim=c(0.2,5),
                  label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_serious`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = TRUE,
                  subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
@@ -783,7 +780,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_adverse_event`,
        rightcols = c("effect", "ci", "Overall"),rightlabs = c("OR", "95%-CI", "Risk of bias"),
                  label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_adverse_event`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = TRUE,
                  subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
@@ -942,7 +939,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_nausea_vomitting`,
        rightcols = c("effect", "ci", "Overall"),rightlabs = c("OR", "95%-CI", "Risk of bias"),
                  label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_nausea_vomitting`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = TRUE,
                  subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
@@ -1192,9 +1189,6 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_eps_symptoms`,
                  overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
                  subgroup = FALSE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
-
-
-
 ```
 
 **Figure 32** Forest plot for extrapyramidal side effects (use of antiparkinsonian medication as a proxy) for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. OR: Odds Ratio, 95%CI: 95% confidence intervals. Moreover, ulotaront was reported not to deteriorate movement symptoms in participants with Parkinson's disease psychosis as measured with the Unified Parkinson Disease Rating Scale Part III [@RN13].
@@ -1203,7 +1197,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_eps_symptoms`,
 
 No usable data available from RCT.
 
-### 6.1.28 Anxiety
+### 6.1.27 Anxiety
 
 #### Timepoint 1: *1 day - 2 weeks*
 
@@ -1247,7 +1241,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_anxiety`,
 
 No usable data available from RCT.
 
-### 6.1.29 Agitation
+### 6.1.28 Agitation
 
 #### Timepoint 1: *1 day - 2 weeks*
 
@@ -1276,7 +1270,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_agitation`,
 
 No usable data available from RCT.
 
-### 6.1.30 Headache
+### 6.1.29 Headache
 
 #### Timepoint 1: *1 day - 2 weeks*
 
@@ -1383,7 +1377,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_insomnia`,
        rightcols = c("effect", "ci", "Overall"),rightlabs = c("OR", "95%-CI", "Risk of bias"),
                  label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_insomnia`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = TRUE,
                  subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
@@ -1413,7 +1407,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_psychosis`,
        rightcols = c("effect", "ci", "Overall"),rightlabs = c("OR", "95%-CI", "Risk of bias"),
                  label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_insomnia`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = TRUE,
                  subgroup = TRUE, fixed=TRUE, random=TRUE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 
@@ -2300,7 +2294,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_>13 weeks_weight_increased`,
 
 **Figure 67** Forest plot for weight increase for the comparison of TAAR1 agonist vs. antipsychotics at \>13 weeks. The overall risk of bias of the trials for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence interval.
 
-### 6.2.21 Weight in kg
+### 6.2.22 Weight in kg
 
 #### Timepoint 1: *1 day - 2 weeks*
 
@@ -3693,7 +3687,7 @@ forest(meta_comp_drug,
 
 We explored potential dose-effects by plotting the effect sizes for each fixed-dose level of TAAR1 agonist compared to placebo in improving symptoms in acute schizophrenia (see 8.4.1) or in participants with schizophrenia and predominant negative symptoms (see 8.4.2). However, we did not conduct any formal subgroup test or dose-response meta-analysis due to the limited number of trials
 
-#### 8.4.1 Exploration of dose-efffect of ulotaront and ralmitaront on overall symptoms of acute schizophrenia
+#### 8.4.1 Exploration of dose-effect of ulotaront and ralmitaront on overall symptoms of acute schizophrenia
 
 ```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=6, warning=FALSE}
 ggplot(
@@ -4011,7 +4005,7 @@ Thus, we assigned some concerns or a *moderate risk of bias* due to missing evid
 
 ### 10.4.4 Reporting bias assessment for mechanistic insights
 
-We assigned a *high risk* of reporting bias for outcomes related to mechanistic insights (F-DOPA PET and fMRI). This judgment was based on the identification of a new ralmitaront RCT [@pet_ralmitaront] in the search, which had unavailable results and was retrospectively registered, indicating that the findings may not have been published due to the magnitude, direction, or statistical significance of the results, although this remains uncertain. The trial had a double-blind, crossover design and included 35 participants with clinically stable schizophrenia. Potential negative findings from this trial could potentially have an impact on the results, given that only one small trial contributed data to the each of the fMRI and PET outcomes. (ROB-ME-4.1 “yes”; ROB-ME-4.2 “yes”). The search was comprehensive, and no other trials assessing neurobiological outcomes are expected to have been eligible.
+We assigned a *high risk* of reporting bias for outcomes related to mechanistic insights (F-DOPA PET and fMRI). This judgment was based on the identification of a new ralmitaront RCT [@pet_ralmitaront] in the search, which had unavailable results and was retrospectively registered, suggesting that the findings may not have been published due to their magnitude, direction, or statistical significance, although this remains uncertain. The trial had a double-blind, crossover design and included 35 participants with clinically stable schizophrenia. Potential negative findings from this trial could have an important impact on the results, given that only one small trial contributed data to each of the fMRI and PET outcomes (ROB-ME-4.1 “yes”; ROB-ME-4.2 “yes”). The search was comprehensive, and no other eligible trials assessing neurobiological outcomes are expected.
 
 # 11. Summary of evidence
 
@@ -4085,7 +4079,7 @@ Of note, for safety outcomes (serious adverse events, worsening of psychosis, an
 
 ## 11.2 Summary of evidence tables
 
-### 11.2.1 TAAR1 agonists versus placebo
+### 11.2.1 TAAR1 agonists versus placebo as monotherapy
 
 #### Efficacy
 
@@ -4123,7 +4117,7 @@ knitr::kable(soe_all_ta1_pl_saf)
 
 **Table 6** Summary of evidence table for the comparison of TAAR1 agonists versus placebo for dropouts and side-effects in individuals with psychosis, other mental health conditions and healthy volunteers. There were data for ulotaront and ralmitaront, mainly for adult participants. Across-trial bias was evaluated using the ROB-ME approach [@page2023]. N=number of trials, n=number of participants. MD: Mean difference, OR: Odds ratio, 95%CI: 95% confidence interval.
 
-### 11.2.21 TAAR1 agonists versus antipsychotics
+### 11.2.21 TAAR1 agonists versus antipsychotics as monotherapy
 
 #### Efficacy
 
@@ -4153,7 +4147,7 @@ knitr::kable(soe_all_ta1_apd_saf)
 
 **Table 9** Summary of evidence table for the comparison of TAAR1 agonists versus antipsychotics for dropouts and side-effects in adults with psychosis, other mental health conditions and healthy volunteers. There were data from four trials, one for ulotaront vs. amisulpride (single dose) [@RN115], one for ulotaront vs. previous antipsychotics (single dose) [@milanovic2024], one for ralmitaront vs. risperidone (4 weeks) [@RN113], and one for ulotaront vs. quetiapine (52 weeks) [@otsukapharmaceuticaldevelopmentcommercializationinc2024]. Across-trial bias was evaluated using the ROB-ME approach [@page2023]. N=number of trials, n=number of participants. OR: Odds ratio, 95%CI: 95% confidence interval.
 
-### 11.2.3 TAAR1 agonists versus placebo *(adjunctive to antipsychotic treatment)*
+### 11.2.3 TAAR1 agonists versus placebo as adjunctive to antipsychotic treatment
 
 #### Efficacy
 
