@@ -175,7 +175,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
           pairwise_i<- pairwise_i %>% left_join(rob_i) %>% 
               unique()
           
-          meta_comp<-metacont(data=pairwise_i,  #method.random.ci = "HK",  adhoc.hakn.ci="se", #reml default for tau, Do not use HK correction due to <5 studies
+          meta_comp<-metacont(data=pairwise_i,  #method.random.ci = "HK",  adhoc.hakn.ci="se", #reml default for tau, Do not use HK correction due to <5 studies in most meta-analyses
                              mean.e = mean1_new, sd.e=sd1_new, n.e=n1_new, mean.c = mean2_new, sd.c=sd2_new, n.c=n2_new,
                              sm=sm_used, random=random_true, fixed=fixed_true,    
                              studlab = study_name_drug, prediction = prediction_true, subgroup = population, 
@@ -250,9 +250,10 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                                   random=random_true, fixed=fixed_true, 
                                   studlab = study_name_drug, prediction = prediction_true, subgroup=population)
          
-         cer_point_0=ifelse(exp(meta_comp_plac$TE.random)/(1+exp(meta_comp_plac$TE.random))<0.001,#estimate of frequency in the control group in case of <0.1% events, in order to esimtate the ACR
-                            length(unique(meta_comp_plac$data$study_name))*0.5/(sum(meta_comp_plac$data$n2_new)+2* length(unique(meta_comp_plac$data$study_name))*0.5), #continuity correction
-                            exp(meta_comp_plac$TE.random)/(1+exp(meta_comp_plac$TE.random))) 
+         meta_comp_plac_0<-metaprop(data=pairwise_i, event=event2_new, n=n2_new,  method="Inverse", #Inverse variance with continuity correction to be used when <0.1% in the previous analysis
+                                  random=random_true, fixed=fixed_true, 
+                                  studlab = study_name_drug, prediction = prediction_true, subgroup=population)
+         
          
          new_master_i_name<- paste0("master_i_", comparison,"_", time,"_",o)  
         new_pairwise_i_name <- paste0("pairwise_i_", comparison,"_", time,"_",o)  
@@ -326,7 +327,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                                        TE.placebo.random=meta_comp_plac$TE.random.w[p], seTE.placebo.random=meta_comp_plac$seTE.random.w[p], 
                                        TE.placebo.fixed=meta_comp_plac$TE.fixed.w[p], seTE.placebo.fixed=meta_comp_plac$seTE.fixed.w[p], 
                                        TE.random=as.double(meta_comp$TE.random.w[p]), seTE.random=as.double(meta_comp$seTE.random.w[p]),
-                                       cer_point_0=cer_point_0, #estimate of frequency in the control group in case of <0.1% events, in order to esimtate the ACR
+                                       cer_point_0=exp(meta_comp_plac_0$TE.random)/(1+exp(meta_comp_plac_0$TE.random)), #estimate of frequency in the control group in case of <0.1% events, in order to esimtate the ACR
                                        tau2=as.double(meta_comp$tau2.w[p]), 
                                        i2=as.double(meta_comp$I2.w[p]),
                                        TE.fixed=as.double(meta_comp$TE.fixed.w[p]), seTE.fixed=as.double(meta_comp$seTE.fixed.w[p]))
@@ -381,7 +382,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                                      sm=sm_used, 
                                      TE.placebo.random=meta_comp_plac$TE.random, seTE.placebo.random=meta_comp_plac$seTE.random, 
                                      TE.placebo.fixed=meta_comp_plac$TE.fixed, seTE.placebo.fixed=meta_comp_plac$TE.fixed, 
-                                     cer_point_0=cer_point_0, #estimate of frequency in the control group in case of <0.1% events, in order to esimtate the ACR
+                                     cer_point_0=exp(meta_comp_plac_0$TE.random)/(1+exp(meta_comp_plac_0$TE.random)), #estimate of frequency in the control group in case of <0.1% events, in order to esimtate the ACR
                                      TE.random=meta_comp$TE.random, seTE.random=meta_comp$seTE.random,
                                      tau2=meta_comp$tau2, i2=meta_comp$I2,
                                      TE.fixed=meta_comp$TE.fixed, seTE.fixed=meta_comp$seTE.fixed)
@@ -421,7 +422,7 @@ meta_outcome_qtc<-data.frame(outcome="qtc_interval", comparison="taar1_vs_placeb
                            duration=paste0(min(master_qtc$duration_weeks),"-", max(master_qtc$duration_weeks)),
                            sm="MD", 
                            TE.placebo.random=NA, seTE.placebo.random=NA, 
-                           cer_point_0=NA, #estimate of frequency in the control group in case of 0% events, in order to esimtate the ACR
+                           cer_point_0=NA, #estimate of frequency in the control group in case of <0.1% events with GLMM, in order to esimtate the ACR
                            TE.placebo.fixed=NA, seTE.placebo.fixed=NA, 
                            TE.random=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$TE.random, seTE.random=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$seTE.random,
                            tau2=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$tau2, 

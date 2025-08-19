@@ -80,7 +80,6 @@ mainfont: Arialh
 
     #Round off results to two digits
     options(scipen=1, digits=2)
-
     ```
 
     </div>
@@ -113,7 +112,7 @@ The following changes were made compared with the previous version of the review
 
 7.  For meta-analyses using fixed-effect Mantel–Haenszel models, we did not apply continuity corrections.
 
-8.  For meta-analyses of the absolute frequency in the comparison groups (e.g., placebo), we used generalized linear mixed models (with maximum-likelihood estimation of tau-squared) rather than the inverse-variance method [@schwarzer2019]. The pooled estimate from this approach was combined with the odds ratio from the random-effects meta-analysis to estimate the absolute frequency in the experimental groups. In cases where the absolute frequency in the comparison group was 0%, we applied a continuity correction of 0.5 to allow the estimations.
+8.  For meta-analyses of the absolute frequency in the comparison groups (e.g., placebo), we used generalized linear mixed models (with maximum-likelihood estimation of tau-squared) rather than the inverse-variance method [@schwarzer2019]. The pooled estimate from this approach was combined with the odds ratio from the random-effects meta-analysis to estimate the absolute frequency in the experimental groups. When the absolute frequency in the comparison group was 0%, we applied a continuity correction of 0.5 (and used the inverse-variance method for the meta-analysis) in order to calculate a non-zero frequency in the comparison group and thus enable estimation of the frequency in the experimental group (while still reporting 0% for the comparison group).
 
 9.  For adjusting the effect sizes of dichotomous outcomes in crossover studies, a continuity correction was applied by adding 0.5 to events and non-events in the two groups whenever any of these contained 0 participants, whereas previously the correction had been applied only to the specific cells with 0 events or non-events. The respective analyses were revised accordingly, and the findings remained materially unchanged.
 
@@ -166,7 +165,7 @@ knitr::kable(studies_to_plot[, 1:14])
 
 # 4. Description of included trials
 
-There were 26 eligible studies reporting 28 trials, which characteristics can be found in **Table 1**, with 25 trials (2826 participants) being completed and 3 trials being still ongoing (according to the status reported in clinicaltrials.gov up to 12.08.2025). Two studies had two-parts involving either adult and adolescent populations [@RN111], or examining monotherapy or add-on treatments [@hoffmann-laroche2024].
+There were 27 eligible studies reporting 29 trials, which characteristics can be found in **Table 1**, with 26 trials (2848 participants) being completed and 3 trials being still ongoing (according to the status reported in clinicaltrials.gov up to 12.08.2025). Two studies had two-parts involving either adult and adolescent populations [@RN111], or examining monotherapy or add-on treatments [@hoffmann-laroche2024].
 
 The trials used to describe mechanistic insights are provided in the relevant section below. It should be noted that the findings from an additional single-arm molecular neuroimaging are described in this section [@RN132], which was uncontrolled and formally excluded from this iteration of the review. The characteristics of this trial and its findings are described in the "mechanistic insights" section.
 
@@ -1296,15 +1295,14 @@ No usable data available from RCT.
 ```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
 
 forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_headache`, 
-       col.diamond = "firebrick4",
+ col.diamond = "firebrick4",
        col.square =   "firebrick3",     
        label.c="placebo",      
-       leftcols = c("studlab",  "effect", "ci"),     
-        rightcols = c("Overall"), rightlabs = c("Risk of bias"),  
-                 label.e = unique(`meta_comp_taar1_vs_placebo_1 day-2 weeks_headache`$data$treat1_new), 
+       rightcols = c("effect", "ci", "Overall"),rightlabs = c("OR", "95%-CI", "Risk of bias"),
+                 label.e = unique(`meta_comp_taar1_vs_placebo_3-13 weeks_headache`$data$treat1_new), 
                  subgroup.hetstat = TRUE, overall.hetstat =FALSE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
-                 overall = FALSE, prediction.subgroup = FALSE, prediction=FALSE,
-                 subgroup = TRUE, fixed=TRUE, random=TRUE,
+                 overall = TRUE, prediction.subgroup = FALSE, prediction = FALSE,
+                 subgroup = TRUE, fixed=FALSE, random=FALSE,
                  label.left = "TAAR1 better", label.right="Placebo better")
 ```
 
@@ -3499,7 +3497,7 @@ No usable data available from RCT.
 
 #### Efficacy outcomes
 
-```{r echo=F, fig.fullwidth=T, fig.width=10, fig.height=5, warning=FALSE}
+```{r echo=F, fig.fullwidth=T, fig.width=7, fig.height=5, warning=FALSE}
 
 outcome_categories<-outcome_names %>% 
   select(outcome, event_text) 
@@ -3555,7 +3553,7 @@ It should be noted that there were also data for response to treatment and relap
 
 #### Dropouts and side-effects
 
-```{r echo=F, fig.fullwidth=T, fig.width=10, fig.height=11, warning=FALSE}
+```{r echo=F, fig.fullwidth=T, fig.width=7, fig.height=8, warning=FALSE}
 safety_primary3<-meta_outcome %>% left_join(ae_categories) %>%  
   mutate(event_text=ifelse(outcome=="death", "Mortality", 
                            ifelse(outcome=="serious", "Serious event", 
@@ -3708,7 +3706,7 @@ We explored potential dose-effects by plotting the effect sizes for each fixed-d
 
 #### 8.4.1 Exploration of dose-effect of ulotaront and ralmitaront on overall symptoms of acute schizophrenia
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=6, warning=FALSE}
+```{r echo=F, fig.fullwidth=T, fig.width=9, fig.height=5, warning=FALSE}
 ggplot(
   data = data_doses[data_doses$population == "acute", ],
   aes(
@@ -3756,7 +3754,7 @@ Therefore, dose-effect findings are inconclusive.
 
 #### 8.4.2 Exploration of dose-effects of ralmitaront (monotherapy or add-on to antipsychotics) in people with schizophrenia and predominant negative symptoms
 
-```{r echo=F, fig.fullwidth=T, fig.width=11, fig.height=6, warning=FALSE}
+```{r echo=F, fig.fullwidth=T, fig.width=9, fig.height=5, warning=FALSE}
 ggplot(
   data = data_doses[data_doses$population == "negative", ],
   aes(
