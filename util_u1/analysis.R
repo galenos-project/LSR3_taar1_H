@@ -30,13 +30,14 @@ primary_outcome<-"overall"
 meta_outcome<-data.frame(outcome=NA,  comparison=NA, timepoint=NA, k=NA, n=NA,population=NA, duration=NA,
                          sm=NA,  low_bias=NA, moderate_bias=NA, high_bias=NA, k_schiz=NA, n_schiz=NA,
                          TE.placebo.random=NA, seTE.placebo.random=NA, 
-                         TE.placebo.fixed=NA, seTE.placebo.fixed=NA, 
+                         TE.placebo.fixed=NA, seTE.placebo.fixed=NA,
+                         cer_point_0=NA,
                          tau2=NA,  i2=NA,
                          TE.random=NA, seTE.random=NA, TE.fixed=NA, seTE.fixed=NA)
 
-o<-"sedation"
+o<-"nausea_vomitting"
 time<-"1 day-2 weeks"
-comparison="taar1_vs_placebo"
+comparison="taar1_vs_antipsychotic"
 
 for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes_common, dichotomous_outcomes_rare)){
   for(time in unique(master$timepoint)){
@@ -205,6 +206,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
             if(nrow(master_pooled_i)>1){
          pairwise_i<-pairwise(data=master_pooled_i, studlab = study_name, treat=drug_new,
                                   event=e_an, n=n_an, sm=sm_used)
+         
          pairwise_i<-as.data.frame(pairwise_i) %>% 
             filter(treat1=="TAAR1 agonist" | treat2=="TAAR1 agonist") %>%
             mutate(treat1_new=ifelse(treat1=="TAAR1 agonist" , treat1, treat2),
@@ -212,17 +214,19 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                    event1_new=ifelse(treat1=="TAAR1 agonist" , event1, event2),
                    event2_new=ifelse(treat1=="TAAR1 agonist" , event2, event1),
                    n1_new=ifelse(treat1=="TAAR1 agonist" ,n1, n2),
-                   n2_new=ifelse(treat1=="TAAR1 agonist" , n2, n1)) %>%
+                   n2_new=ifelse(treat1=="TAAR1 agonist" , n2, n1),
+                   TE=ifelse(treat1=="TAAR1 agonist" , TE, -TE)) %>%#change the direction of TE to normalize the effects 
             mutate(comp=paste0(treat1_new," vs. ", treat2_new)) %>%
             select(study_name, study_name_drug, comp, duration_weeks,
                    population, crossover_periods, treat1_new, treat2_new, event1_new, n1_new, event2_new, n2_new, TE, seTE) %>%
-           mutate(event1_new_corrected=ifelse(event1_new==0, 0.5, event1_new), #To correct for crosssover, i need to add 0.5 when 0.
-                  event2_new_corrected=ifelse(event2_new==0, 0.5, event2_new),
-                  subtr_event1_new_corrected=ifelse(n1_new- event1_new==0, 0.5, n1_new- event1_new),
-                  subtr_event2_new_corrected=ifelse(n2_new- event1_new==0, 0.5, n2_new- event2_new)) %>% 
-           mutate(n_total=(n1_new+n2_new)/crossover_periods) %>%
+           mutate(event1_new_corrected=ifelse((event1_new==0) | (event2_new==0) | (n1_new-event1_new==0) | (n2_new-event2_new==0), event1_new+0.5, event1_new), #To correct for crosssover, apply continuity correction by adding 0.5 to all event or non-event in case of 0.
+                  event2_new_corrected=ifelse((event1_new==0) | (event2_new==0) | (n1_new-event1_new==0) | (n2_new-event2_new==0), event2_new+0.5, event2_new),
+                  subtr_event1_new_corrected=ifelse((event1_new==0) | (event2_new==0) | (n1_new-event1_new==0) | (n2_new-event2_new==0), n1_new- event1_new+0.5, n1_new- event1_new),
+                  subtr_event2_new_corrected=ifelse((event1_new==0) | (event2_new==0) | (n1_new-event1_new==0) | (n2_new-event2_new==0), n2_new- event2_new+0.5, n2_new- event2_new)) %>% 
+           mutate(n_total=(n1_new+n2_new)/crossover_periods,
+                  n_total_corrected=ifelse((event1_new==0) | (event2_new==0) | (n1_new-event1_new==0) | (n2_new-event2_new==0), 2+n_total, n_total)) %>%
            mutate(varTE=ifelse(crossover_periods==1, seTE^2,       #correct for crossover studies using correlation of 0.2 and the formula in Elbourne, n = n total of the whole crossover (not by adding twice the same population)
-                               seTE^2-0.4*(n_total)/(sqrt(event1_new_corrected*subtr_event1_new_corrected*event2_new_corrected* subtr_event2_new_corrected)))) %>% 
+                               seTE^2-0.4*(n_total_corrected)/(sqrt(event1_new_corrected*subtr_event1_new_corrected*event2_new_corrected* subtr_event2_new_corrected)))) %>% 
            unique()
           
          rob_i<-rob %>% filter(outcome==o & timepoint==time)
@@ -245,6 +249,10 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
          meta_comp_plac<-metaprop(data=pairwise_i, event=event2_new, n=n2_new,  method="GLMM", #GLMM was used, and logit transformation the default 
                                   random=random_true, fixed=fixed_true, 
                                   studlab = study_name_drug, prediction = prediction_true, subgroup=population)
+         
+         cer_point_0=ifelse(exp(meta_comp_plac$TE.random)/(1+exp(meta_comp_plac$TE.random))<0.001,#estimate of frequency in the control group in case of <0.1% events, in order to esimtate the ACR
+                            length(unique(meta_comp_plac$data$study_name))*0.5/(sum(meta_comp_plac$data$n2_new)+2* length(unique(meta_comp_plac$data$study_name))*0.5), #continuity correction
+                            exp(meta_comp_plac$TE.random)/(1+exp(meta_comp_plac$TE.random))) 
          
          new_master_i_name<- paste0("master_i_", comparison,"_", time,"_",o)  
         new_pairwise_i_name <- paste0("pairwise_i_", comparison,"_", time,"_",o)  
@@ -284,6 +292,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                                          sm=sm_used,
                                          TE.placebo.random=NA, seTE.placebo.random=NA, 
                                          TE.placebo.fixed=NA, seTE.placebo.fixed=NA, 
+                                         cer_point_0=NA, #estimate of frequency in the control group in case of <0.1% events, in order to esimtate the ACR
                                          TE.random=as.double(meta_comp$TE.random.w[p]), seTE.random=as.double(meta_comp$seTE.random.w[p]),
                                          tau2=as.double(meta_comp$tau2.w[p]), 
                                          i2=as.double(meta_comp$I2.w[p]),
@@ -317,6 +326,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                                        TE.placebo.random=meta_comp_plac$TE.random.w[p], seTE.placebo.random=meta_comp_plac$seTE.random.w[p], 
                                        TE.placebo.fixed=meta_comp_plac$TE.fixed.w[p], seTE.placebo.fixed=meta_comp_plac$seTE.fixed.w[p], 
                                        TE.random=as.double(meta_comp$TE.random.w[p]), seTE.random=as.double(meta_comp$seTE.random.w[p]),
+                                       cer_point_0=cer_point_0, #estimate of frequency in the control group in case of <0.1% events, in order to esimtate the ACR
                                        tau2=as.double(meta_comp$tau2.w[p]), 
                                        i2=as.double(meta_comp$I2.w[p]),
                                        TE.fixed=as.double(meta_comp$TE.fixed.w[p]), seTE.fixed=as.double(meta_comp$seTE.fixed.w[p]))
@@ -345,6 +355,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                                      duration=paste0(min(pairwise_i$duration_weeks),"-", max(pairwise_i$duration_weeks)),
                                      TE.placebo.random=NA, seTE.placebo.random=NA, 
                                      TE.placebo.fixed=NA, seTE.placebo.fixed=NA, 
+                                     cer_point_0=NA, #estimate of frequency in the control group in case of 0% events, in order to esimtate the ACR
                                      TE.random=meta_comp$TE.random, seTE.random=meta_comp$seTE.random, 
                                      tau2=meta_comp$tau2, i2=meta_comp$I2,
                                      TE.fixed=meta_comp$TE.fixed, seTE.fixed=meta_comp$seTE.fixed)
@@ -370,6 +381,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                                      sm=sm_used, 
                                      TE.placebo.random=meta_comp_plac$TE.random, seTE.placebo.random=meta_comp_plac$seTE.random, 
                                      TE.placebo.fixed=meta_comp_plac$TE.fixed, seTE.placebo.fixed=meta_comp_plac$TE.fixed, 
+                                     cer_point_0=cer_point_0, #estimate of frequency in the control group in case of <0.1% events, in order to esimtate the ACR
                                      TE.random=meta_comp$TE.random, seTE.random=meta_comp$seTE.random,
                                      tau2=meta_comp$tau2, i2=meta_comp$I2,
                                      TE.fixed=meta_comp$TE.fixed, seTE.fixed=meta_comp$seTE.fixed)
@@ -409,6 +421,7 @@ meta_outcome_qtc<-data.frame(outcome="qtc_interval", comparison="taar1_vs_placeb
                            duration=paste0(min(master_qtc$duration_weeks),"-", max(master_qtc$duration_weeks)),
                            sm="MD", 
                            TE.placebo.random=NA, seTE.placebo.random=NA, 
+                           cer_point_0=NA, #estimate of frequency in the control group in case of 0% events, in order to esimtate the ACR
                            TE.placebo.fixed=NA, seTE.placebo.fixed=NA, 
                            TE.random=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$TE.random, seTE.random=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$seTE.random,
                            tau2=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$tau2, 
@@ -500,7 +513,10 @@ meta_outcome_soe<-meta_outcome %>%
          point.fixed=ifelse(sm=="OR", round(exp(TE.fixed), 2), round(TE.fixed, 2)),
          lb.fixed=ifelse(sm=="OR", round(exp(TE_lb.fixed), 2), round(TE_lb.fixed, 2)),
          ub.fixed=ifelse(sm=="OR", round(exp(TE_ub.fixed), 2), round(TE_ub.fixed, 2))) %>% 
-  mutate(ACR=ifelse(sm=="OR", round(100*point.random*cer_point/(1-cer_point+point.random*cer_point),1), NA),
+  mutate(ACR=ifelse(sm=="OR", ifelse(cer_point<0.1, 
+                                     round(100*point.random*cer_point_0/(1-cer_point_0+point.random*cer_point_0),1), 
+                                     round(100*point.random*cer_point/(1-cer_point+point.random*cer_point),1)),
+                                     NA),
          CER=ifelse(!is.na(point.random), round(100*cer_point, 1), NA),
          t2=round(tau2,4))  %>% 
   mutate(association=ifelse(!is.na(point.random), 
