@@ -67,16 +67,16 @@ mainfont: Arialh
     results_matrix<-read_xlsx("data_u1/reporting_bias_table_2025.08.15.xlsx")
 
     #SoE tables
-    soe_sch_ac_ta1_pl_eff<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 1)
-    soe_sch_neg_ta1_pl_eff<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 2)
-    soe_sch_neg_ta1_pl_addon_eff<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 3)
-    soe_sch_stab_ta1_apd_eff<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 4)
-    soe_sch_ac_ta1_apd_eff<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 5)
-    soe_pd_ta1_pl_eff<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 6)
-    soe_all_ta1_pl_saf<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 7)
-    soe_all_ta1_pl_addon_saf<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 8)
-    soe_all_ta1_apd_saf<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 9)
-    soe_mechanistic<-read_xlsx("data_u1/soe_tables_2025.01.16.xlsx", sheet = 10)
+    soe_sch_ac_ta1_pl_eff<-read_xlsx("data_u1/soe_tables_2025.08.15.xlsx", sheet = 1)
+    soe_sch_neg_ta1_pl_eff<-read_xlsx("data_u1/soe_tables_2025.08.15.xlsx", sheet = 2)
+    soe_sch_neg_ta1_pl_addon_eff<-read_xlsx("data_u1/soe_tables_2025.08.15.xlsx", sheet = 3)
+    soe_sch_stab_ta1_apd_eff<-read_xlsx("data_u1/soe_tables_2025.08.15.xlsx", sheet = 4)
+    soe_sch_ac_ta1_apd_eff<-read_xlsx("data_u1/soe_tables_2025.08.15.xlsx", sheet = 5)
+    soe_pd_ta1_pl_eff<-read_xlsx("data_u1/soe_tables_2025.08.15.xlsx", sheet = 6)
+    soe_all_ta1_pl_saf<-read_xlsx("data_u1/soe_tables_2025.08.15.xlsx", sheet = 7)
+    soe_all_ta1_pl_addon_saf<-read_xlsx("data_u1/soe_tables_2025.08.15.xlsx", sheet = 8)
+    soe_all_ta1_apd_saf<-read_xlsx("data_u1/soe_tables_2025.08.15.xlsx", sheet = 9)
+    soe_mechanistic<-read_xlsx("data_u1/soe_tables_2025.08.15.xlsx", sheet = 10)
 
     #Round off results to two digits
     options(scipen=1, digits=2)
@@ -100,7 +100,7 @@ There were the following changes compared to the previous version of the review:
 5.  Typos were corrected, and comparison 6.2.11 (dropouts due to adverse events) was revised, as dropouts due to any reason had been mistakenly reported instead of dropouts specifically due to adverse events. Additional data were available for these outcomes as well.
 6.  We preferred using the term "trials" instead of "studies", given two studies had two-parts involving either adult and adolescent populations [@RN111], or examining monotherapy or add-on treatments [@hoffmann-laroche2024].
 7.  For meta-analysis using fixed-effect Mantel–Haenszel models we did not apply continuity corrections.
-8.  For meta-analyses of placebo-arm event proportions, we used generalized linear mixed models rather than inverse-variance methods [@schwarzer2019]..
+8.  For meta-analyses of placebo-arm event proportions, we used generalized linear mixed models rather than inverse-variance method [@schwarzer2019].
 
 ## 1.2 Methodological approach
 
@@ -220,7 +220,7 @@ All the trials were double-blind randomized controlled trials, with a low risk o
 
 **It should be noted that the x-axis in the figures below, which present dichotomous outcomes using odds ratios, is logarithmically scaled.** **When the forest plots present only the effect sizes, there were crossover trials in which variances were corrected assuming a correlation of 0.2.**
 
-## 6.1 *TAAR1 agonist* vs *placebo (monotherapy)*
+## 6.1 *TAAR1 agonist* vs *placebo as monotherapy*
 
 This section refers to the comparison of TAAR1 agonists versus placebo as monotherapy. See comparison 6.3 for TAAR1 agonists versus placebo as adjunctive treatment to antipsychotics.
 
@@ -830,8 +830,6 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_anticholinergic_symptom`,
 ```
 
 **Figure 20** Forest plot for anticholinergic side-effects (e.g., constipation, dry mouth, dry eye) for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks. The overall risk of bias of the trials for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
-
-No usable data available from RCT.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -1532,7 +1530,7 @@ ggplot(data=safety_primary_plot,
 
 **Figure 42** Summary forest plot for dropouts and side-effects for the comparison of TAAR1 agonists compared to placebo and for the two timepoints with usable data. It should be noted that different populations have been pooled in the analysis of dropouts and adverse events including schizophrenia (acute phase, negative symptoms, adolescents), Parkinson's disease psychosis, narcolepsy-cateplexy and healthy volunteers. The findings of the random-effects model are presented. OR\>1 corresponds to more events with TAAR1 agonists compared to placebo. OR: Odds ratio, 95%CI: 95% confidence intervals. N=number of trials, n=number of participants.
 
-## 6.2 *TAAR1 agonist* vs *antipsychotic (monotherapy)*
+## 6.2 *TAAR1 agonist* vs *antipsychotic as monotherapy*
 
 ### 6.2.1 Overall symptoms (primary outcome)
 
@@ -2109,7 +2107,7 @@ No usable data available from RCT.
 
 No usable data available from RCT.
 
-### 2.6.18 Dizziness
+### 2.6.17 Dizziness
 
 #### Timepoint 1: *1 day - 2 weeks*
 
@@ -2130,7 +2128,7 @@ forest(`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_dizziness`,
 
 ```
 
-**Figure 61** Forest plot for dizziness for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the trials for this outcome is presented. Trials with no estimable effect size had 0 events in both arms. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
+**Figure 61** Forest plot for dizziness for the comparison of TAAR1 agonist vs. antipsychotics at 1 day to 2 weeks. The comparison groups were previous antipsychotics (NCT05402111) or amisulpride (Perini et al 2023). The overall risk of bias of the trials for this outcome is presented. OR: Odds ratio, MetS: Metabolic Syndrome, 95%CI: 95% confidence interval.
 
 #### Timepoint 2: *3 weeks - 13 weeks*
 
@@ -2821,7 +2819,7 @@ ggplot(data = safety_primary_plot_2,
 
 **Figure 85** Summary forest plot for dropouts and side-effects for the comparison of TAAR1 agonists compared to antipsychotics and for the three timepoints with usable data. There were data for single doses of ulotaront versus amisulpride in healthy volunteers at 1 day, single dose of ulotaront versus previous antipsychotic in adults with schizophrenia and concurrent metabolic syndrome at 1 day, ralmitaront versus risperidone in acute schizophrenia or schizoaffective disorder at 4 weeks, ulotaront versus quetiapine in clinically stable adults with schizophrenia at 52 weeks. OR\>1 corresponds to more events with TAAR1 agonists compared to antipsychotics. OR: Odds ratio, 95%CI: 95% confidence interval. N=number of trials, n=number of participants.
 
-## 6.3 *TAAR1 agonist vs placebo (adjunctive to antipsychotic treatment)*
+## 6.3 *TAAR1 agonist vs placebo as adjunctive to antipsychotic treatment*
 
 ### 6.3.1 Overall symptoms (primary outcome)
 
@@ -3779,7 +3777,7 @@ It appeared that ralmitaront 45 mg/d, which was examined as an add-on treatment,
 
 # 9. Sensitivity analyses
 
-## 9.1. Predefined sensitivity analyses
+## 9.1 Predefined sensitivity analyses
 
 We did not conduct the following predefined sensitivity analyses for the primary outcome due to the limited data:
 

@@ -34,8 +34,8 @@ meta_outcome<-data.frame(outcome=NA,  comparison=NA, timepoint=NA, k=NA, n=NA,po
                          tau2=NA,  i2=NA,
                          TE.random=NA, seTE.random=NA, TE.fixed=NA, seTE.fixed=NA)
 
-o<-"overall"
-time<-"3-13 weeks"
+o<-"sedation"
+time<-"1 day-2 weeks"
 comparison="taar1_vs_placebo"
 
 for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes_common, dichotomous_outcomes_rare)){
@@ -242,8 +242,8 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
             }
          
          
-         meta_comp_plac<-metaprop(data=pairwise_i, event=event2_new, n=n2_new, method="GLMM", #GLMM was used, and logit transformation the default 
-                                  random=random_true, fixed=fixed_true,  
+         meta_comp_plac<-metaprop(data=pairwise_i, event=event2_new, n=n2_new,  method="GLMM", #GLMM was used, and logit transformation the default 
+                                  random=random_true, fixed=fixed_true, 
                                   studlab = study_name_drug, prediction = prediction_true, subgroup=population)
          
          new_master_i_name<- paste0("master_i_", comparison,"_", time,"_",o)  
