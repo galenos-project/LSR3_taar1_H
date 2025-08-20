@@ -66,7 +66,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
           prediction_true=TRUE
           random_true=TRUE
           fixed_true=TRUE #present both fixed and random effects due to small number of studies
-          approach="Inverse"
+          #approach="Inverse" #this was used for all random effects
           outcome_type="continuous"
           
         } else if (o %in% dichotomous_outcomes_common){
@@ -76,17 +76,17 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
           random_true=TRUE
           fixed_true=TRUE #present both fixed and random effects due to small number of studies
           prediction_true=TRUE
-          approach="Inverse"
+          #approach="Inverse" this was used for all random-effects
           sm_used="OR"
           outcome_type="dichotomous"
         } else if(o %in% dichotomous_outcomes_rare){
           master_i$mean<-master[[paste0(o,"_e")]] #used as n with event 
           master_i$sd<-NA
           master_i$n<-master$randomized_n
-          random_true=FALSE #Do not present random-effects in outcomes deemed as rare
-          prediction_true=FALSE
+          random_true=TRUE #Both random and fixed effects to be presented for all outcomes
+          prediction_true=TRUE
           fixed_true=TRUE
-          approach="MH"
+          #approach="MH" #this was used for all fixed-effects dichotomous models
           sm_used="OR"
           outcome_type="dichotomous"
         }
@@ -236,7 +236,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
          if(length(unique(pairwise_i$crossover_periods))==1){
          meta_comp<-metabin(data=pairwise_i, 
                             event.e = event1_new, n.e=n1_new, event.c = event2_new, n.c=n2_new,
-                            sm=sm_used, random=random_true, fixed=fixed_true, #Default method MH.exact for fixed effects, IV-REML for random-effects
+                            sm=sm_used, random=random_true, fixed=fixed_true, MH.exact=TRUE, #default IV-REML for random-effects
                             studlab = study_name_drug, prediction = prediction_true, subgroup=population)
          } else{
            meta_comp<-metagen(data=pairwise_i, #Present forest plots using crossover corrections
