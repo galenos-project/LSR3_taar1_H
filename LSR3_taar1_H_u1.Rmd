@@ -720,7 +720,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_serious`,
 
 Schizophrenia/psychosis/hallucinations was a major contributor to serious adverse events in @RN112 (placebo: 4/6, ulotaront: 24/25), @RN111 (placebo: 3/12, ulotaront: 22/23), @RN110 (placebo: 3/3, ulotaront: 1/2), and @hoffmann-laroche2022 (placebo: 1/1, ralmitaront: 3/3, risperidone: 0).
 
-According to the EUCTR registry and @sirs2024, a pre-specified analysis showed that the number of schizophrenia-related serious adverse events occurring during treatment or within 7 days of the last dose was smaller than the total number reported when also including post-treatment hospitalizations occurring more than 7 days after the last dose. Specifically, in @RN112: placebo 1/4 vs. ulotaront 3/24, and in @RN111: placebo 0/3 vs. ulotaront 3/22.
+According to the EUCTR registry and @sirs2024, a pre-specified analysis showed that the number of schizophrenia-related serious adverse events occurring during treatment or within 7 days of the last dose was smaller than the total number reported when also including post-treatment hospitalizations occurring more than 7 days after the last dose. Specifically, in @RN112: placebo 1/4 vs. ulotaront 3/24, and in @RN111: placebo 0/3 vs. ulotaront 3/22. In @RN110, serious adverse events were reported only up to 7 days after the last dose of the treatment.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -1430,7 +1430,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_psychosis`,
 
 ```
 
-**Figure 40** Forest plot for psychosis as an adverse event (e.g., worsening or exacerbaton of psychosis or halllucinations) for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. The overall risk of bias of the trials for this outcome is presented. The Hartung–Knapp correction was applied to the 95% CIs of the random-effects model (more than 5 studies available in total), presented for both the overall analysis and the subgroups. OR: Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 40** Forest plot for psychosis as an adverse event (e.g., worsening or exacerbaton of psychosis or halllucinations) for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). Participants with either serious or non-serious adverse events of worsening of psychosis were included when the total number was reported. In @RN110, however, only participants with non-serious adverse events of worsening of psychosis were included, as the total number was not reported, and serious (1 in ulotaront and 3 in placebo) and non-serious events (7 in ulotaront and 7 in placebo) were not combined to avoid potential double counting. The overall risk of bias of the trials for this outcome is presented. The overall risk of bias of the trials for this outcome is presented. The Hartung–Knapp correction was applied to the 95% CIs of the random-effects model (more than 5 studies available in total), presented for both the overall analysis and the subgroups. OR: Odds ratio, 95%CI: 95% confidence intervals.
 
 Similar to 6.1.12, it was noted that in post-hoc analyses of @RN111 and @RN112, reported in @sirs2024, restricting to events during treatment or within seven days of the last dose, the number with worsening of psychosis as an adverse event was somewhat smaller (placebo: 4/6, ulotaront: 31/38 in @RN111; placebo: 8/9, ulotaront: 27/37 in @RN112).
 
