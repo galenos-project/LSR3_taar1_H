@@ -130,7 +130,7 @@ The following changes were made compared with the previous version of the review
 
 6.  The effect sizes were as follows: 1) standardized mean differences (SMD) for efficacy outcomes, given that various scales have been used in the literature to allow comparability of the findings with other trials of antipsychotic drugs; 2) mean differences (MD) for laboratory measures, i.e., weight (kg), QTc interval (msec), and prolactin levels (ng/ml); 3) odds ratios (OR) for dichotomous outcomes, which were also converted to absolute risks using a control event rate [@RN71]. 95% confidence intervals (95% CI) are presented, and 95% prediction intervals were presented when there were available data for more than 5 studies. Other effect sizes were not used in the first and second iteration of the review, e.g., those used in meta-analysis of variance due to the paucity of data.
 
-7.  Meta-analysis was conducted primarily using a random-effects model with inverse variance and REML estimator of tau-squared. Due to the small number of trials (\<5) in the majority of the analyses, we did not correct the confidence intervals using the Hartung-Knapp method [@RN82], and we also presented the findings from fixed-effects models throughout (using Mantel-Haenszel method for dichotomous outcomes, without continuity correction). A continuity correction of 0.5 was applied when one group in a trial had zero events, to enable presentation of effect sizes in the forest plots (and in random-effects meta-analysis, and those meta-analysis combining findings from crossover and parallel trials). Meta-analysis of proportions was conducted to pool the control groups to estimate the control event rate using logit transformation of the proportions and generalized linear mixed models (using the maximum likelihood estimator of tau-squared) [@schwarzer2019].The pooled estimate from this approach was combined with the odds ratio from the random-effects meta-analysis to estimate the absolute frequency in the experimental groups. In cases where the absolute frequency in the comparison group was 0%, we applied a continuity correction of 0.5 to allow the estimations.
+7.  Meta-analysis was conducted primarily using a random-effects model with inverse variance and REML estimator of tau-squared. We corrected the confidence intervals using the Hartung-Knapp method [@RN82] when there were more than 5 studies, and we also presented the findings from fixed-effects models throughout (using Mantel-Haenszel method for dichotomous outcomes, without continuity correction). A continuity correction of 0.5 was applied when one group in a trial had zero events, to enable presentation of effect sizes in the forest plots (and in random-effects meta-analysis, and those meta-analysis combining findings from crossover and parallel trials). Meta-analysis of proportions was conducted to pool the control groups to estimate the control event rate using logit transformation of the proportions and generalized linear mixed models (using the maximum likelihood estimator of tau-squared) [@schwarzer2019].The pooled estimate from this approach was combined with the odds ratio from the random-effects meta-analysis to estimate the absolute frequency in the experimental groups. In cases where the absolute frequency in the comparison group was 0%, we applied a continuity correction of 0.5 to allow the estimations.
 
 8.  Sensitivity analysis of the primary outcome included using fixed-effect methods (*post-hoc* due to the small number of trials), restricting the analysis to trials with an overall low risk of bias, and excluding trials with imputed values. A *post-hoc* sensitivity analysis was also conducted in this iteration to examine the potential impact of omitting the findings of a prematurely terminated trial [@sumitomo2024] on the summary effects of the primary outcome.
 
@@ -626,7 +626,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_dropout_any`,
 
 ```
 
-**Figure 11** Forest plot for dropouts due to any reason for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 11** Forest plot for dropouts due to any reason for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. The Hartung–Knapp correction was applied to the 95% CIs of the random-effects model (more than 5 studies available in total), presented for both the overall analysis and the subgroups. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -670,7 +670,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_dropout_ae`,
                  label.left = "TAAR1 better", label.right="Placebo better")
 ```
 
-**Figure 13** Forest plot for dropouts due to adverse event for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 13** Forest plot for dropouts due to adverse event for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. The Hartung–Knapp correction was applied to the 95% CIs of the random-effects model (more than 5 studies available in total), presented for both the overall analysis and the subgroups. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 The exact adverse event leading to dropouts was not reported, but it may have included worsening of psychosis.
 
@@ -682,7 +682,7 @@ No usable data available from RCT.
 
 #### Timepoint 1: *1 day - 2 weeks*
 
-```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=4}
+```{r echo=F, fig.fullwidth=T, fig.width=12, fig.height=5}
 forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_serious`, 
        col.diamond = "firebrick4",
        col.square =   "firebrick3",     
@@ -690,7 +690,7 @@ forest(`meta_comp_taar1_vs_placebo_1 day-2 weeks_serious`,
        leftcols = c("studlab",  "effect", "ci"),   
        rightcols = c("Overall"), rightlabs = c("Risk of bias"),   
                   xlim=c(0.2,5),
-                 label.e = unique(`meta_comp_taar1_vs_placebo_1 day-2 weeks_serious`$data$treat1_new), 
+                 label.e = unique(`meta_comp_taar1_vs_placebo_1 day-2 weeks_serious`$data$treat1_new), prediction = FALSE,
                  subgroup.hetstat = TRUE, overall.hetstat =TRUE, test.subgroup.random = FALSE,test.subgroup.fixed = FALSE,
                  overall = TRUE, prediction.subgroup = FALSE,
                  subgroup = TRUE, fixed=TRUE, random=TRUE,
@@ -716,7 +716,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_serious`,
 
 ```
 
-**Figure 15** Forest plot for serious adverse events for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 15** Forest plot for serious adverse events for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. The Hartung–Knapp correction was applied to the 95% CIs of the random-effects model (more than 5 studies available in total), presented for both the overall analysis and the subgroups. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 Schizophrenia/psychosis/hallucinations was a major contributor to serious adverse events in @RN112 (placebo: 4/6, ulotaront: 24/25), @RN111 (placebo: 3/12, ulotaront: 22/23), @RN110 (placebo: 3/3, ulotaront: 1/2), and @hoffmann-laroche2022 (placebo: 1/1, ralmitaront: 3/3, risperidone: 0).
 
@@ -806,7 +806,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_adverse_event`,
 
 ```
 
-**Figure 18** Forest plot for any adverse event for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 18** Forest plot for any adverse event for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. The Hartung–Knapp correction was applied to the 95% CIs of the random-effects model (more than 5 studies available in total), presented for both the overall analysis and the subgroups. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -964,7 +964,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_nausea_vomitting`,
 
 ```
 
-**Figure 25** Forest plot for nausea or vomiting for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. OR=Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 25** Forest plot for nausea or vomiting for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. The Hartung–Knapp correction was applied to the 95% CIs of the random-effects model (more than 5 studies available in total), presented for both the overall analysis and the subgroups. OR=Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -1400,7 +1400,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_insomnia`,
 
 ```
 
-**Figure 39** Forest plot for insomnia for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. The overall risk of bias of the trials for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 39** Forest plot for insomnia for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. The overall risk of bias of the trials for this outcome is presented. The Hartung–Knapp correction was applied to the 95% CIs of the random-effects model (more than 5 studies available in total), presented for both the overall analysis and the subgroups. OR: Odds ratio, 95%CI: 95% confidence intervals.
 
 #### Timepoint 3: *\> 13 weeks*
 
@@ -1430,7 +1430,7 @@ forest(`meta_comp_taar1_vs_placebo_3-13 weeks_psychosis`,
 
 ```
 
-**Figure 40** Forest plot for psychosis as an adverse event (e.g., worsening or exacerbaton of psychosis or halllucinations) for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. The overall risk of bias of the trials for this outcome is presented. OR: Odds ratio, 95%CI: 95% confidence intervals.
+**Figure 40** Forest plot for psychosis as an adverse event (e.g., worsening or exacerbaton of psychosis or halllucinations) for the comparison of TAAR1 agonist vs. placebo at 3-13 weeks (primary timepoint). The overall risk of bias of the trials for this outcome is presented. The overall risk of bias of the trials for this outcome is presented. The Hartung–Knapp correction was applied to the 95% CIs of the random-effects model (more than 5 studies available in total), presented for both the overall analysis and the subgroups. OR: Odds ratio, 95%CI: 95% confidence intervals.
 
 Similar to 6.1.12, it was noted that in post-hoc analyses of @RN111 and @RN112, reported in @sirs2024, restricting to events during treatment or within seven days of the last dose, the number with worsening of psychosis as an adverse event was somewhat smaller (placebo: 4/6, ulotaront: 31/38 in @RN111; placebo: 8/9, ulotaront: 27/37 in @RN112).
 
@@ -1451,8 +1451,8 @@ efficacy_primary<-meta_outcome %>% left_join(outcome_categories) %>%
   filter(outcome=="cognition" | outcome=="depression" | outcome=="negative" | outcome=="overall" | outcome=="positive") %>% #efficacy outcome
   filter(!is.na(TE.random)) %>% filter(!is.na(event_text)) %>%
   mutate(point=TE.random,
-         lb=TE.random-1.96*seTE.random,
-         ub=TE.random+1.96*seTE.random) %>% 
+         lb=TE_lb.random,
+         ub=TE_ub.random) %>% 
   unique() %>%
   filter(comparison=="taar1_vs_placebo") %>% 
   mutate(n_text=paste0("N=", k,", n=",n))
@@ -1502,8 +1502,8 @@ safety_primary<-meta_outcome %>% left_join(ae_categories) %>%
                              ifelse(outcome=="dropout_any" | outcome=="dropout_ae", "dropouts", MedDRA_group))) %>% 
   filter(!is.na(TE.random)) %>% filter(!is.na(event_text)) %>%
   mutate(point=TE.random,
-         lb=TE.random-1.96*seTE.random,
-         ub=TE.random+1.96*seTE.random) %>% unique() %>%
+         lb=TE_lb.random,
+         ub=TE_ub.random) %>% unique() %>%
   filter(comparison=="taar1_vs_placebo") %>% 
   mutate(n_text=paste0("N=", k,", n=",n))
 
@@ -1528,8 +1528,8 @@ ggplot(data=safety_primary_plot,
   geom_text(aes(x=0.05, label=n_text), colour="black" , position=position_dodge(width = 0.9), vjust = 1.5)+
   geom_point(size=4,#aes(size=n), 
              position=position_dodge(width = 0.5))+
-  geom_errorbarh(aes(x=exp(point), xmin=exp(TE.random-1.96*seTE.random), 
-                    xmax=exp(TE.random+1.96*seTE.random), colour=type_outcome), height=0.2,
+  geom_errorbarh(aes(x=exp(point), xmin=exp(TE_lb.random), 
+                    xmax=exp(TE_ub.random), colour=type_outcome), height=0.2,
                 width=0, position=position_dodge(width = 0.5))+
   geom_vline(xintercept=1, linetype='solid')+
   scale_size_continuous(guide=FALSE)+
@@ -2728,8 +2728,8 @@ efficacy_primary_2<-meta_outcome %>% left_join(outcome_categories) %>%
   filter(outcome=="cognition" | outcome=="depression" | outcome=="negative" | outcome=="overall" | outcome=="positive" ) %>% #efficacy outcome
   filter(!is.na(TE.random)) %>% filter(!is.na(event_text)) %>%
   mutate(point=TE.random,
-         lb=TE.random-1.96*seTE.random,
-         ub=TE.random+1.96*seTE.random) %>% 
+         lb=TE_lb.random,
+         ub=TE_ub.random) %>% 
   unique() %>%
   filter(comparison=="taar1_vs_antipsychotic") %>% 
   mutate(n_text=paste0("N=", k,", n=",n))
@@ -2785,8 +2785,8 @@ safety_primary_2<-meta_outcome %>% left_join(ae_categories) %>%
                              ifelse(outcome=="dropout_any" | outcome=="dropout_ae", "dropouts", MedDRA_group))) %>% 
   filter(!is.na(TE.random)) %>% filter(!is.na(event_text)) %>%
   mutate(point=TE.random,
-         lb=TE.random-1.96*seTE.random,
-         ub=TE.random+1.96*seTE.random) %>% unique() %>%
+         lb=TE_lb.random,
+         ub=TE_ub.random) %>% unique() %>%
   filter(comparison=="taar1_vs_antipsychotic") %>% 
   mutate(n_text=paste0("N=", k,", n=",n))
 
@@ -2812,8 +2812,8 @@ ggplot(data = safety_primary_plot_2,
   geom_point(size = 4,
              position = position_dodge(width = 0.5)) +
   geom_errorbarh(aes(x = exp(point),
-                     xmin = exp(TE.random - 1.96 * seTE.random),
-                     xmax = exp(TE.random + 1.96 * seTE.random),
+                     xmin = exp(lb),
+                     xmax = exp(ub),
                      colour = type_outcome),
                  height = 0.2,
                  width = 0,
@@ -3595,8 +3595,8 @@ ggplot(data = safety_primary_plot3,
   geom_point(size = 4,
              position = position_dodge(width = 0.5)) +
   geom_errorbarh(aes(x = exp(point),
-                     xmin = exp(TE.random - 1.96 * seTE.random),
-                     xmax = exp(TE.random + 1.96 * seTE.random)),
+                     xmin = exp(lb),
+                     xmax = exp(ub)),
                  height = 0.2,
                  width  = 0,
                  position = position_dodge(width = 0.5)) +

@@ -33,11 +33,12 @@ meta_outcome<-data.frame(outcome=NA,  comparison=NA, timepoint=NA, k=NA, n=NA,po
                          TE.placebo.fixed=NA, seTE.placebo.fixed=NA,
                          cer_point_0=NA,
                          tau2=NA,  i2=NA,
-                         TE.random=NA, seTE.random=NA, TE.fixed=NA, seTE.fixed=NA)
+                         TE.random=NA, seTE.random=NA, TE.fixed=NA, seTE.fixed=NA,
+                         TE_lb.random=NA, TE_ub.random=NA, TE_lb.fixed=NA,TE_ub.fixed=NA)
 
-o<-"nausea_vomitting"
+o<-"serious"
 time<-"1 day-2 weeks"
-comparison="taar1_vs_antipsychotic"
+comparison="taar1_vs_placebo"
 
 for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes_common, dichotomous_outcomes_rare)){
   for(time in unique(master$timepoint)){
@@ -175,7 +176,7 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
           pairwise_i<- pairwise_i %>% left_join(rob_i) %>% 
               unique()
           
-          meta_comp<-metacont(data=pairwise_i,  #method.random.ci = "HK",  adhoc.hakn.ci="se", #reml default for tau, Do not use HK correction due to <5 studies in most meta-analyses
+          meta_comp<-metacont(data=pairwise_i,  ##reml default for tau, Do not use HK correction due to <5= studies in most meta-analyses
                              mean.e = mean1_new, sd.e=sd1_new, n.e=n1_new, mean.c = mean2_new, sd.c=sd2_new, n.c=n2_new,
                              sm=sm_used, random=random_true, fixed=fixed_true,    
                              studlab = study_name_drug, prediction = prediction_true, subgroup = population, 
@@ -233,25 +234,29 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
          pairwise_i<- pairwise_i %>% left_join(rob_i) %>% 
            unique()
          
+         n_studies_in_meta<-pairwise_i %>% filter(!(event1_new==0 & event2_new==0)) #Exclude studies with 0 events
+          
          if(length(unique(pairwise_i$crossover_periods))==1){
          meta_comp<-metabin(data=pairwise_i, 
                             event.e = event1_new, n.e=n1_new, event.c = event2_new, n.c=n2_new,
                             sm=sm_used, random=random_true, fixed=fixed_true, MH.exact=TRUE, #default IV-REML for random-effects
+                            method.random.ci =ifelse(length(unique(n_studies_in_meta$study_name))>5, "HK", "classic"),
                             studlab = study_name_drug, prediction = prediction_true, subgroup=population)
          } else{
            meta_comp<-metagen(data=pairwise_i, #Present forest plots using crossover corrections
                               TE = TE, seTE=sqrt(varTE), 
                               sm=sm_used, random=random_true, fixed=fixed_true,  
+                              method.random.ci =ifelse(length(unique(n_studies_in_meta$study_name))>5, "HK", "classic"),
                               studlab = study_name_drug, prediction = prediction_true, subgroup=population)
             }
          
          
          meta_comp_plac<-metaprop(data=pairwise_i, event=event2_new, n=n2_new,  method="GLMM", #GLMM was used, and logit transformation the default 
-                                  random=random_true, fixed=fixed_true, 
+                                  random=random_true, fixed=fixed_true, #HAKN not used becasue the point estimate is to be used.
                                   studlab = study_name_drug, prediction = prediction_true, subgroup=population)
          
          meta_comp_plac_0<-metaprop(data=pairwise_i, event=event2_new, n=n2_new,  method="Inverse", #Inverse variance with continuity correction to be used when <0.1% in the previous analysis
-                                  random=random_true, fixed=fixed_true, 
+                                  random=random_true, fixed=fixed_true,  #HAKN not used becasue the point estimate is to be used.
                                   studlab = study_name_drug, prediction = prediction_true, subgroup=population)
          
          
@@ -297,7 +302,11 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                                          TE.random=as.double(meta_comp$TE.random.w[p]), seTE.random=as.double(meta_comp$seTE.random.w[p]),
                                          tau2=as.double(meta_comp$tau2.w[p]), 
                                          i2=as.double(meta_comp$I2.w[p]),
-                                         TE.fixed=as.double(meta_comp$TE.fixed.w[p]), seTE.fixed=as.double(meta_comp$seTE.fixed.w[p]))
+                                         TE.fixed=as.double(meta_comp$TE.fixed.w[p]), seTE.fixed=as.double(meta_comp$seTE.fixed.w[p]),
+                                         TE_lb.random=as.double(meta_comp$lower.random.w[p]), 
+                                         TE_ub.random=as.double(meta_comp$upper.random.w[p]), 
+                                         TE_lb.fixed=as.double(meta_comp$lower.fixed.w[p]),
+                                         TE_ub.fixed=as.double(meta_comp$upper.fixed.w[p]))
               meta_outcome<-rbind(meta_outcome, meta_outcome_i)
             }
         } else {
@@ -330,7 +339,11 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                                        cer_point_0=exp(meta_comp_plac_0$TE.random)/(1+exp(meta_comp_plac_0$TE.random)), #estimate of frequency in the control group in case of <0.1% events, in order to esimtate the ACR
                                        tau2=as.double(meta_comp$tau2.w[p]), 
                                        i2=as.double(meta_comp$I2.w[p]),
-                                       TE.fixed=as.double(meta_comp$TE.fixed.w[p]), seTE.fixed=as.double(meta_comp$seTE.fixed.w[p]))
+                                       TE.fixed=as.double(meta_comp$TE.fixed.w[p]), seTE.fixed=as.double(meta_comp$seTE.fixed.w[p]),
+                                       TE_lb.random=as.double(meta_comp$lower.random.w[p]), 
+                                       TE_ub.random=as.double(meta_comp$upper.random.w[p]), 
+                                       TE_lb.fixed=as.double(meta_comp$lower.fixed.w[p]),
+                                       TE_ub.fixed=as.double(meta_comp$upper.fixed.w[p]))
             meta_outcome<-rbind(meta_outcome, meta_outcome_i)
           }
           
@@ -359,7 +372,11 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                                      cer_point_0=NA, #estimate of frequency in the control group in case of 0% events, in order to esimtate the ACR
                                      TE.random=meta_comp$TE.random, seTE.random=meta_comp$seTE.random, 
                                      tau2=meta_comp$tau2, i2=meta_comp$I2,
-                                     TE.fixed=meta_comp$TE.fixed, seTE.fixed=meta_comp$seTE.fixed)
+                                     TE.fixed=meta_comp$TE.fixed, seTE.fixed=meta_comp$seTE.fixed,
+                                     TE_lb.random=meta_comp$lower.random, 
+                                     TE_ub.random=meta_comp$upper.random,
+                                     TE_lb.fixed=meta_comp$lower.fixed,
+                                     TE_ub.fixed=meta_comp$upper.fixed)
            meta_outcome<-rbind(meta_outcome, meta_outcome_i)
           }
            else{
@@ -385,7 +402,11 @@ for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes
                                      cer_point_0=exp(meta_comp_plac_0$TE.random)/(1+exp(meta_comp_plac_0$TE.random)), #estimate of frequency in the control group in case of <0.1% events, in order to esimtate the ACR
                                      TE.random=meta_comp$TE.random, seTE.random=meta_comp$seTE.random,
                                      tau2=meta_comp$tau2, i2=meta_comp$I2,
-                                     TE.fixed=meta_comp$TE.fixed, seTE.fixed=meta_comp$seTE.fixed)
+                                     TE.fixed=meta_comp$TE.fixed, seTE.fixed=meta_comp$seTE.fixed,
+                                     TE_lb.random=meta_comp$lower.random, 
+                                     TE_ub.random=meta_comp$upper.random,
+                                     TE_lb.fixed=meta_comp$lower.fixed,
+                                     TE_ub.fixed=meta_comp$upper.fixed)
           meta_outcome<-rbind(meta_outcome, meta_outcome_i)
         }
         
@@ -427,7 +448,11 @@ meta_outcome_qtc<-data.frame(outcome="qtc_interval", comparison="taar1_vs_placeb
                            TE.random=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$TE.random, seTE.random=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$seTE.random,
                            tau2=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$tau2, 
                             i2=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$I2,
-                           TE.fixed=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$TE.fixed, seTE.fixed=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$seTE.fixed)
+                           TE.fixed=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$TE.fixed, seTE.fixed=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$seTE.fixed,
+                           TE_lb.random=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$lower.random, 
+                           TE_ub.random=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$upper.random,
+                           TE_lb.fixed=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$lower.fixed,
+                           TE_ub.fixed=`meta_comp_taar1_vs_antipsychotic_1 day-2 weeks_qtc_interval`$upper.fixed)
 
 meta_outcome<-rbind(meta_outcome, meta_outcome_qtc) 
 
@@ -503,10 +528,10 @@ meta_outcome_soe<-meta_outcome %>%
          n_prop=ifelse(k_prop==1, 1, n/n_possible),
          k_schiz_prop=k_schiz/k, n_schiz_prop=n_schiz/n,
          moderate_to_high_bias_prop=(moderate_bias+high_bias)/k) %>%
-  mutate(TE_lb.random=TE.random-1.96*seTE.random, 
-         TE_ub.random=TE.random+1.96*seTE.random,
-         TE_lb.fixed=TE.fixed-1.96*seTE.fixed, 
-         TE_ub.fixed=TE.fixed+1.96*seTE.fixed) %>%
+  #mutate(TE_lb.random=TE.random-1.96*seTE.random,  #Lower and upper boundaries provide directly in the update because HAKN was applied when more than 5 studies were available
+   #      TE_ub.random=TE.random+1.96*seTE.random,
+    #     TE_lb.fixed=TE.fixed-1.96*seTE.fixed, 
+     #    TE_ub.fixed=TE.fixed+1.96*seTE.fixed) %>%
   mutate(cer_point=exp(TE.placebo.random)/(1+exp(TE.placebo.random))) %>%
   mutate(point.random=ifelse(sm=="OR", round(exp(TE.random), 2), round(TE.random, 2)),
          lb.random=ifelse(sm=="OR", round(exp(TE_lb.random), 2), round(TE_lb.random, 2)),
@@ -639,7 +664,7 @@ pairwise_drug<-pairwise(data=master_pooled_drug, studlab = study_name_drug, trea
   pairwise_drug<- pairwise_drug %>% left_join(rob_drug) %>% 
     unique()
   
-  meta_comp_drug<-metacont(data=pairwise_drug,  
+  meta_comp_drug<-metacont(data=pairwise_drug,  #HAKN not applied becasue <=5 studies
                       mean.e = mean1_new, sd.e=sd1_new, n.e=n1_new, mean.c = mean2_new, sd.c=sd2_new, n.c=n2_new,
                       sm="SMD", random=TRUE, fixed=TRUE,    
                       studlab = study_name_drug, prediction = FALSE, subgroup = drug, 
@@ -717,7 +742,7 @@ pairwise_drug<-pairwise(data=master_pooled_drug, studlab = study_name_drug, trea
   
   pairwise_separate<-pairwise_separate %>% left_join(rob_overall) %>% left_join(rob_positive) %>% left_join(rob_resopnse) %>% left_join(rob_negative)
   
-  meta_comp_overall_sch<-metacont(data=pairwise_separate[pairwise_separate$population=="Schizophrenia spectrum (acute episode)",],  
+  meta_comp_overall_sch<-metacont(data=pairwise_separate[pairwise_separate$population=="Schizophrenia spectrum (acute episode)",],  #HAKN not used because none of the studies had more than 5 studies.
                            mean.e = overall_mean1_new, sd.e=overall_sd1_new, n.e=overall_n1_new, mean.c = overall_mean2_new, sd.c=overall_sd2_new, n.c=overall_n2_new,
                            sm="SMD", random=TRUE, fixed=TRUE,    
                            studlab = study_name_drug, prediction = FALSE, subgroup = population, 
@@ -753,19 +778,19 @@ pairwise_drug<-pairwise(data=master_pooled_drug, studlab = study_name_drug, trea
 
   meta_comp_response_sch<-metabin(data=pairwise_separate[pairwise_separate$population=="Schizophrenia spectrum (acute episode)",],  
                      event.e = response1, n.e=random1, event.c = response2, n.c=random2,
-                     sm="OR", random=TRUE, fixed=TRUE,    
+                     sm="OR", random=TRUE, fixed=TRUE,    MH.exact = TRUE,
                      studlab = study_name_drug, prediction = FALSE, subgroup = population, 
                      prediction.subgroup = FALSE)
   
   meta_comp_response_pdp<-metabin(data=pairwise_separate[pairwise_separate$population=="Parkinson Disease Psychosis",],  
                                   event.e = response1, n.e=random1, event.c = response2, n.c=random2,
-                                  sm="OR", random=TRUE, fixed=TRUE,    
+                                  sm="OR", random=TRUE, fixed=TRUE,    MH.exact = TRUE,
                                   studlab = study_name_drug, prediction = FALSE, subgroup = population, 
                                   prediction.subgroup = FALSE)
   
   meta_comp_response_neg<-metabin(data=pairwise_separate[pairwise_separate$population=="Schizophrenia spectrum (negative symptoms)",],  
                                   event.e = response1, n.e=random1, event.c = response2, n.c=random2,
-                                  sm="OR", random=TRUE, fixed=TRUE,    
+                                  sm="OR", random=TRUE, fixed=TRUE,    MH.exact = TRUE,
                                   studlab = study_name_drug, prediction = FALSE, subgroup = population, 
                                   prediction.subgroup = FALSE)
 
@@ -779,7 +804,7 @@ pairwise_drug<-pairwise(data=master_pooled_drug, studlab = study_name_drug, trea
   meta_comp_negative_neg<-metacont(data=pairwise_separate[pairwise_separate$population=="Schizophrenia spectrum (negative symptoms)" & !is.na(pairwise_separate$positive_mean1_new),],  
                                    mean.e = negative_mean1_new, sd.e=negative_sd1_new, 
                                    n.e=negative_n1_new, mean.c = negative_mean2_new, sd.c=negative_sd2_new, n.c=negative_n2_new,
-                                   sm="SMD", random=TRUE, fixed=TRUE,    
+                                   sm="SMD", random=TRUE, fixed=TRUE,   
                                    studlab = study_name_drug, prediction = FALSE, subgroup = population, 
                                    prediction.subgroup = FALSE)
   
