@@ -36,8 +36,8 @@ meta_outcome<-data.frame(outcome=NA,  comparison=NA, timepoint=NA, k=NA, n=NA,po
                          TE.random=NA, seTE.random=NA, TE.fixed=NA, seTE.fixed=NA,
                          TE_lb.random=NA, TE_ub.random=NA, TE_lb.fixed=NA,TE_ub.fixed=NA)
 
-o<-"serious"
-time<-"1 day-2 weeks"
+o<-"sedation"
+time<-"3-13 weeks"
 comparison="taar1_vs_placebo"
 
 for(o in c(continuous_outcomes_smd, continuous_outcomes_md, dichotomous_outcomes_common, dichotomous_outcomes_rare)){
@@ -539,7 +539,7 @@ meta_outcome_soe<-meta_outcome %>%
          point.fixed=ifelse(sm=="OR", round(exp(TE.fixed), 2), round(TE.fixed, 2)),
          lb.fixed=ifelse(sm=="OR", round(exp(TE_lb.fixed), 2), round(TE_lb.fixed, 2)),
          ub.fixed=ifelse(sm=="OR", round(exp(TE_ub.fixed), 2), round(TE_ub.fixed, 2))) %>% 
-  mutate(ACR=ifelse(sm=="OR", ifelse(cer_point<0.1, 
+  mutate(ACR=ifelse(sm=="OR", ifelse(round(100*cer_point, 1)<0.1, #if <0.1% 
                                      round(100*point.random*cer_point_0/(1-cer_point_0+point.random*cer_point_0),1), 
                                      round(100*point.random*cer_point/(1-cer_point+point.random*cer_point),1)),
                                      NA),
