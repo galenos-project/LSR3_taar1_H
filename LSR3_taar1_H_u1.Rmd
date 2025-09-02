@@ -152,7 +152,7 @@ The following changes were made compared with the previous version of the review
 PRISMA_flowdiagram(prisma, previous = TRUE, detail_databases = TRUE, detail_registers = TRUE, other=FALSE, font = "Arial", fontsize = 12)
 ```
 
-**Figure 1** PRISMA 2020 flow diagram for studies reporting randomized clinical trials (last search: 16.05.2025). Two eligible studies reported each of two trials, thus, the total number of trials was 28. In the updated search, additional records of studies already included were identified. \*It should be noted that due to the limited data on mechanistic insights, we also presented narratively the findings from one of the excluded uncontrolled trials, since this was the only molecular neuroimaging trial @RN132; this trial has been listed along with the excluded trials already in the first version of the review [@siafis2024].
+**Figure 1** PRISMA 2020 flow diagram for studies reporting randomized clinical trials (last search: 25.08.2025). Two eligible studies reported each of two trials, thus, the total number of trials was 28. In the updated search, additional records of studies already included were identified. \*It should be noted that due to the limited data on mechanistic insights, we also presented narratively the findings from one of the excluded uncontrolled trials, since this was the only molecular neuroimaging trial @RN132; this trial has been listed along with the excluded trials already in the first version of the review [@siafis2024].
 
 # 3. Table of included trials
 

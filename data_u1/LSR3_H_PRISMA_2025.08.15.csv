@@ -3,19 +3,19 @@ NA,node4,prevstud,Grey title box; Previous studies,Previous studies,Grey title b
 previous_studies,node5,box1,Studies included in previous version of review,Studies included in previous version of review,Studies included in previous version of review,previous_studies.html,25
 previous_reports,NA,box1,Reports of studies included in previous version of review,Reports of studies included in previous version of review,NA,previous_reports.html,124
 NA,node6,newstud,Yellow title box; Identification of new studies via databases and registers,Identification of new studies via databases and registers,Yellow title box; Identification of new studies via databases and registers,newstud.html,0
-database_results,node7,box2,Records identified from: Databases,Databases,Records identified from: Databases and Registers,database_results.html,7130
-database_specific_results,NA,box2,Records identified from: specific databases,Specific Databases,NA,database_results.html,"Biosis Citation Index, 1335; Cochrane SR, 4; CENTRAL, 132; EMBASE, 1643; International Pharmaceutical Abstracts, 37; MEDLINE, 1531; OpenAlex, 529; PsycINFO, 159; WoS CORE, 1615; ScanMedicine, 30"
+database_results,node7,box2,Records identified from: Databases,Databases,Records identified from: Databases and Registers,database_results.html,7250
+database_specific_results,NA,box2,Records identified from: specific databases,Specific Databases,NA,database_results.html,"Biosis Citation Index, 1346; Cochrane SR, 4; CENTRAL, 134; EMBASE, 1667; International Pharmaceutical Abstracts, 41; MEDLINE, 1561; OpenAlex, 557; PsycINFO, 161; WoS CORE, 1636; ScanMedicine, 31"
 register_results,NA,box2,Records identified from: Registers,Registers,NA,NA,115
 register_specific_results,NA,box2,Records identified from: specific registers,Specific Registers,NA,database_results.html,"ClinicalTrials.gov, 81; WHO ICTRP, 34"
 NA,node16,othstud,Grey title box; Identification of new studies via other methods,Identification of new studies via other methods,Grey title box; Identification of new studies via other methods,othstud.html,0
 website_results,node17,box11,Records identified from: Websites,Websites,"Records identified from: Websites, Organisations and Citation Searching",website_results.html,0
 organisation_results,,box11,Records identified from: Organisations,Organisations,NA,NA,0
 citations_results,NA,box11,Records identified from: Citation searching,Citation searching,NA,NA,0
-duplicates,node8,box3,Duplicate records,Duplicate records,Duplicate records,duplicates.html,6110
+duplicates,node8,box3,Duplicate records,Duplicate records,Duplicate records,duplicates.html,6176
 excluded_automatic,NA,box3,Records marked as ineligible by automation tools,Records marked as ineligible by automation tools,NA,NA,0
 excluded_other,NA,box3,Records removed for other reasons,Records removed for other reasons,NA,NA,0
-records_screened,node9,box4,Records screened (databases and registers),Records screened,Records screened (databases and registers),records_screened.html,1020
-records_excluded,node10,box5,Records excluded (databases and registers),Records excluded,Records excluded (databases and registers),records_excluded.html,980
+records_screened,node9,box4,Records screened (databases and registers),Records screened,Records screened (databases and registers),records_screened.html,1074
+records_excluded,node10,box5,Records excluded (databases and registers),Records excluded,Records excluded (databases and registers),records_excluded.html,1034
 dbr_sought_reports,node11,box6,Reports sought for retrieval (databases and registers),Reports sought for retrieval,Reports sought for retrieval (databases and registers),dbr_sought_reports.html,40
 dbr_notretrieved_reports,node12,box7,Reports not retrieved (databases and registers),Reports not retrieved,Reports not retrieved (databases and registers),dbr_notretrieved_reports.html,0
 other_sought_reports,node18,box12,Reports sought for retrieval (other),Reports sought for retrieval,Reports sought for retrieval (other),other_sought_reports.html,0
