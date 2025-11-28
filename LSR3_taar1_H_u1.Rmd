@@ -1478,7 +1478,10 @@ ggplot(data=efficacy_primary,
   xlab("SMD 95%CI (SMD>0: TAAR1 agonist better)")+
   theme_bw()+
   theme(
-    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  panel.grid.major.x = element_blank(), 
+  panel.grid.minor.x = element_blank(), 
     axis.ticks.y = element_blank(),
     strip.background = element_blank(),
     strip.text = element_text(face = "bold"))
@@ -1541,7 +1544,10 @@ ggplot(data=safety_primary_plot,
   xlab("OR 95%CI (OR>1: TAAR1 agonists worse)")+
   theme_bw()+
   theme(
-    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  panel.grid.major.x = element_blank(), 
+  panel.grid.minor.x = element_blank(), 
     axis.ticks.y = element_blank(),
     strip.background = element_blank(),
     strip.text = element_text(face = "bold"))
@@ -2761,7 +2767,10 @@ ggplot(data = efficacy_primary_2,
   xlab("SMD 95% CI (SMD>0: TAAR1 agonist better)") +
   theme_bw() +
   theme(
-    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  panel.grid.major.x = element_blank(), 
+  panel.grid.minor.x = element_blank(), 
     axis.ticks.y     = element_blank(),
     strip.background = element_blank(),
     strip.text       = element_text(face = "bold")
@@ -2829,7 +2838,10 @@ ggplot(data = safety_primary_plot_2,
   xlab("OR 95%CI (OR>1: TAAR1 agonists worse)") +
   theme_bw() +
   theme(
-    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  panel.grid.major.x = element_blank(), 
+  panel.grid.minor.x = element_blank(), 
     axis.ticks.y     = element_blank(),
     strip.background = element_blank(),
     strip.text       = element_text(face = "bold")
@@ -3539,7 +3551,10 @@ ggplot(data = efficacy_primary3,
   xlab("SMD 95% CI (SMD>0: TAAR1 agonist (add-on) better)") +
   theme_bw() +
   theme(
-    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  panel.grid.major.x = element_blank(), 
+  panel.grid.minor.x = element_blank(), 
     axis.ticks.y     = element_blank(),
     strip.background = element_blank(),
     strip.text       = element_text(face = "bold")
@@ -3611,7 +3626,10 @@ ggplot(data = safety_primary_plot3,
   xlab("OR 95% CI (OR>1: TAAR1 agonists (add-on) worse)") +
   theme_bw() +
   theme(
-    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  panel.grid.major.x = element_blank(), 
+  panel.grid.minor.x = element_blank(), 
     axis.ticks.y     = element_blank(),
     strip.background = element_blank(),
     strip.text       = element_text(face = "bold")
@@ -3733,6 +3751,10 @@ ggplot(
   facet_wrap(~ drug_name, scales = "free", nrow = 2) +
   theme_bw(base_size = 12) +
   theme(
+    panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  panel.grid.major.x = element_blank(), 
+  panel.grid.minor.x = element_blank(), 
     strip.background = element_blank(),
     panel.background = element_blank(),
     panel.grid.minor = element_blank(),
@@ -3782,6 +3804,10 @@ ggplot(
   ggtitle("ralmitaront \nmonotherapy or add-on") +
   theme_bw(base_size = 12) +
   theme(
+    panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  panel.grid.major.x = element_blank(), 
+  panel.grid.minor.x = element_blank(), 
     panel.background = element_blank(),
     panel.grid = element_blank(),
     strip.background = element_blank(),
