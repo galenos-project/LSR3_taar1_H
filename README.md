@@ -11,4 +11,4 @@
 - The code has had to be amended slightly, and for each update the files - and folders - have a postscript '_u[n]', where 'n' is the iteration of the update.
 - Changes compared to the previous versions are reported in the first section of the R markdown files.
 
-The current _u1 versions are preliminary and are being updated.
+The current _u1 versions represent the first update of the review.
