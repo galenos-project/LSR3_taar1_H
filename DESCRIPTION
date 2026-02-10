@@ -1,0 +1,23 @@
+Type: project
+Title: TAAR1 Agonists for Psychosis - Systematic Review and Meta-Analysis
+Version: 1.1.0
+Description: Living systematic review and meta-analysis evaluating the efficacy
+    and safety of TAAR1 agonists (ulotaront, ralmitaront) for treating psychosis.
+License: CC BY 4.0
+Imports:
+    tidyverse,
+    readxl,
+    writexl,
+    meta,
+    metafor,
+    netmeta,
+    robvis,
+    knitr,
+    kableExtra,
+    rmarkdown,
+    grid,
+    devtools,
+    PRISMA2020,
+    grateful
+Remotes:
+    mcguinlu/robvis
