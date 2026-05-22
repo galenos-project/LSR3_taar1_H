@@ -1,7 +1,5 @@
-
-data/.Rhistory
-data/.DS_Store
-util/.DS_Store
-.RData
-.Rhistory
-.DS_Store
+**/.DS_Store
+**/.RData
+**/.Rhistory
+**/.Rproj.user
+.positai
